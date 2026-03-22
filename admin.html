@@ -1026,15 +1026,15 @@ function fecharSh(ovId,shId){document.getElementById(ovId).classList.remove('on'
 // ── CONFIG EMBEBIDA (preenchida pela IMPERSILVA TECH antes de entregar) ────
 // Deixar string vazia ('') se não configurado
 const _SYNC_CFG_EMBED = {
-  usr:    '',
-  proj:   '',
+  usr:    'impersilvatech',
+  proj:   'Confeti.ao',
   branch: 'main',
   key:    ''
 };
 
 // Hash do PIN embebido — actualizado automaticamente ao publicar no site
 // Formato: cfHash do PIN actual. Padrão inicial: hash de '1793'
-const _ADMIN_PIN_HASH = 'cf_default';
+const _ADMIN_PIN_HASH='7c51fcee';
 
 function _getSyncCfg(){
   // localStorage tem prioridade (configuração local sobrepõe a embebida)
