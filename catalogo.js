@@ -1,6 +1,5 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 22/03/2026, 16:48:55
+// CONFETI — catalogo.js v2.0 — Gerado em: 22/03/2026, 17:37:14
 // IMPERSILVA TECH
-// Imagens em: pasta imgs/ do repositório
 
 const LOJA_DEFAULT = {
   "nome": "Emílio Doces 🍰🎂🍬",
@@ -15,7 +14,7 @@ const LOJA_DEFAULT = {
   "fraseDia": "🎉 Encomendas para o Natal já abertas — garanta a sua mesa de doces!",
   "bannerDestaque": "🎄 Encomendas para o Natal já abertas — garanta a sua mesa de doces!",
   "bannerActivo": true,
-  "anos": "5",
+  "anos": "2",
   "clientesSatisfeitos": "500+",
   "eventosRealizados": "200+",
   "catsBadge": "🍰 O que fazemos",
@@ -60,14 +59,6 @@ const DEPOIMENTOS_DEFAULT = [
     "nome": "Carlos Mendes",
     "evento": "Kit Natal — Dezembro 2023",
     "avatar": "🎄"
-  },
-  {
-    "id": 3,
-    "stars": 5,
-    "texto": "A mesa de doces do baptizado do meu filho ficou linda! As pessoas ainda hoje falam. Muito obrigada pela dedicação e atenção aos detalhes.",
-    "nome": "Joana Fernandes",
-    "evento": "Baptizado — Março 2024",
-    "avatar": "👶"
   }
 ];
 const FEATURES_DEFAULT = [
@@ -190,10 +181,10 @@ const PRODUTOS_DEFAULT = [
   {
     "id": 101,
     "nome": "Bolo de Casamento Clássico",
-    "preco": 45000,
-    "preco_orig": 0,
+    "preco": 30000,
+    "preco_orig": 45000,
     "categoria": "bolos",
-    "etiqueta": "destaque",
+    "etiqueta": "promo",
     "emoji": "💍",
     "imagem": "imagens/bolo-de-casamento-classico-stuy.webp",
     "descricao": "Bolo de casamento em andares com cobertura de fondant personalizada. Decoração floral à escolha.",
@@ -539,12 +530,6 @@ function salvarWishlist(w){localStorage.setItem('cf_wishlist',JSON.stringify(w))
 function toggleWishlist(id){const w=getWishlist();const i=w.indexOf(id);if(i>-1)w.splice(i,1);else w.push(id);salvarWishlist(w);return w.includes(id);}
 function isWishlisted(id){return getWishlist().includes(id);}
 function kz(n){return n>0?n.toLocaleString('pt-AO')+' Kz':'Orçamento';}
-function getTheme(){return localStorage.getItem('cf_theme')||'dark';}
-function setTheme(t){localStorage.setItem('cf_theme',t);document.documentElement.setAttribute('data-theme',t);}
-function toggleTheme(){setTheme(getTheme()==='dark'?'light':'dark');_syncThemeIcons();}
-function initTheme(){document.documentElement.setAttribute('data-theme',getTheme());}
-function _syncThemeIcons(){document.querySelectorAll('[data-theme-ico]').forEach(el=>{el.textContent=getTheme()==='dark'?'☀️':'🌙';});}
-function applyThemeColors(){const l=getLoja(),r=document.documentElement.style;if(l.corPrincipal)r.setProperty('--pink',l.corPrincipal);if(l.corGrad1&&l.corGrad2)r.setProperty('--grad','linear-gradient(135deg,'+l.corGrad1+','+l.corGrad2+')');if(l.corFundo)r.setProperty('--bg',l.corFundo);}
 function cfHash(s){let h=5381;for(let i=0;i<s.length;i++){h=((h<<5)+h)^s.charCodeAt(i);h|=0;}return(h>>>0).toString(16);}
 function getAdminHash(){const local=localStorage.getItem('cf_admin_hash');if(local)return local;if(typeof _ADMIN_PIN_HASH!=='undefined'&&_ADMIN_PIN_HASH&&_ADMIN_PIN_HASH!=='cf_default')return _ADMIN_PIN_HASH;return cfHash('1793');}
 function checkPin(pin){return cfHash(String(pin))===getAdminHash();}
