@@ -1,4 +1,4 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 22/03/2026, 19:13:22
+// CONFETI — catalogo.js v2.0 — Gerado em: 22/03/2026, 19:35:58
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
@@ -9,7 +9,7 @@ const LOJA_DEFAULT = {
   "logo": "",
   "morada": "Huambo, Angola",
   "instagram": "",
-  "badge": "🎊 Confeitaria Artesanal · Luanda",
+  "badge": "🎊 Confeitaria Artesanal · Huambo",
   "heroTitulo": "Doces que fazem\na festa!",
   "fraseDia": "🎉 Encomendas para o Natal já abertas — garanta a sua mesa de doces!",
   "bannerDestaque": "🎄 Encomendas para o Natal já abertas — garanta a sua mesa de doces!",
@@ -501,7 +501,7 @@ const PRODUTOS_DEFAULT = [
     "categoria": "especial",
     "etiqueta": "especial",
     "emoji": "💌",
-    "imagem": "imagens/encomenda-especial-personalizada-uote.webp",
+    "imagem": "imagens/encomenda-especial-personalizada-53ev.webp",
     "descricao": "Tem uma ideia especial? Criamos qualquer produto personalizado para o seu evento — do conceito à execução.",
     "disponivel": true,
     "specs": {
