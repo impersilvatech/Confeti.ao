@@ -1,4 +1,4 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 22/03/2026, 22:15:56
+// CONFETI — catalogo.js v2.0 — Gerado em: 22/03/2026, 22:27:16
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
@@ -34,12 +34,12 @@ const LOJA_DEFAULT = {
   "corFundo": "#0d0d1a",
   "facebook": "",
   "tiktok": "",
-  "secStatsActiva": false,
-  "secComoFuncionaActiva": false,
+  "secStatsActiva": true,
+  "secComoFuncionaActiva": true,
   "secFeaturesActiva": false,
-  "secEventosActiva": false,
-  "secDepoimentosActiva": false,
-  "secCtaActiva": false,
+  "secEventosActiva": true,
+  "secDepoimentosActiva": true,
+  "secCtaActiva": true,
   "campoDataActivo": true,
   "campoLocalActivo": true
 };
