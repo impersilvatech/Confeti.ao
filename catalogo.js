@@ -1,4 +1,4 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 22/03/2026, 16:48:30
+// CONFETI — catalogo.js v2.0 — Gerado em: 22/03/2026, 16:48:43
 // IMPERSILVA TECH
 // Imagens em: pasta imgs/ do repositório
 
