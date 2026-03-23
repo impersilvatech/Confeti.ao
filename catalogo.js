@@ -1,8 +1,8 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 23/03/2026, 08:27:05
+// CONFETI — catalogo.js v2.0 — Gerado em: 23/03/2026, 08:32:58
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
-  "nome": "Emílio 🍰",
+  "nome": "Emílio",
   "tagline": "Doces para cada momento especial",
   "slogan": "Criamos sabores que ficam na memória. Do casamento à festa de natal, cada detalhe conta.",
   "whatsapp": "244954288128",
@@ -28,7 +28,7 @@ const LOJA_DEFAULT = {
   "levantamentoActivo": true,
   "pedidoPersActivo": true,
   "pedidoPersTexto": "✨ Encomenda Especial",
-  "corPrincipal": "#ffff00",
+  "corPrincipal": "#ff00fb",
   "corGrad1": "#ff6b9d",
   "corGrad2": "#b14ae8",
   "corFundo": "#000000",
