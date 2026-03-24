@@ -25,7 +25,7 @@
         if(els.length){els.forEach(function(el){el.textContent=n;});}
       });
       obs.observe(document.documentElement,{childList:true,subtree:true});
-      // Parar observer apÃ³s carregar
+      // Parar observer apÃÂ³s carregar
       document.addEventListener('DOMContentLoaded',function(){obs.disconnect();});
     }
   }catch(_){}
@@ -88,7 +88,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .fg select option{background:var(--bg2);color:var(--white)}
 [data-theme="light"] .fg select option{background:#fff;color:#1a0a2e}
 .select-wrap{position:relative}
-.select-wrap::after{content:'â¼';position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:.56rem;color:var(--muted);pointer-events:none}
+.select-wrap::after{content:'Ã¢ÂÂ¼';position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:.56rem;color:var(--muted);pointer-events:none}
 .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 
 /* ENTREGA OPTIONS */
@@ -134,7 +134,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 <div class="steps">
   <div class="step"><div class="step-circle active">1</div><span class="step-lbl" style="color:var(--pink)"> Dados</span></div>
   <div class="step-line"></div>
-  <div class="step"><div class="step-circle idle">2</div><span class="step-lbl"> CatÃ¡logo</span></div>
+  <div class="step"><div class="step-circle idle">2</div><span class="step-lbl"> CatÃÂ¡logo</span></div>
   <div class="step-line"></div>
   <div class="step"><div class="step-circle idle">3</div><span class="step-lbl"> Carrinho</span></div>
   <div class="step-line"></div>
@@ -145,11 +145,11 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 <div class="page-hdr">
   <div class="page-logo-img">
     <img src="" id="logo-img" alt="" style="display:none" onerror="this.style.display='none';document.getElementById('logo-ph').style.display='block'"/>
-    <span class="ph" id="logo-ph">ð</span>
+    <span class="ph" id="logo-ph">Ã°ÂÂÂ</span>
   </div>
   <div class="page-logo" id="page-logo">CONFETI</div>
   <div class="page-title">Os seus dados</div>
-  <div class="page-sub">Preenchimento rÃ¡pido para uma experiÃªncia personalizada</div>
+  <div class="page-sub">Preenchimento rÃÂ¡pido para uma experiÃÂªncia personalizada</div>
 </div>
 
 <!-- FRASE DIA -->
@@ -157,7 +157,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 
 <!-- FORM -->
 <div class="form-card">
-  <div class="form-title">ð InformaÃ§Ãµes de contacto</div>
+  <div class="form-title">Ã°ÂÂÂ InformaÃÂ§ÃÂµes de contacto</div>
 
   <div class="fg">
     <label>Nome completo</label>
@@ -165,28 +165,28 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   </div>
 
   <div class="fg">
-    <label>TelemÃ³vel</label>
+    <label>TelemÃÂ³vel</label>
     <input type="tel" id="telefone" placeholder="Ex: 9XX XXX XXX" autocomplete="tel" inputmode="tel"/>
   </div>
 
   <div class="fg">
-    <label>ProvÃ­ncia</label>
+    <label>ProvÃÂ­ncia</label>
     <div class="select-wrap">
       <select id="provincia">
-        <option value="" disabled selected>Selecione a provÃ­ncia...</option>
-        <option>Bengo</option><option>Benguela</option><option>BiÃ©</option>
+        <option value="" disabled selected>Selecione a provÃÂ­ncia...</option>
+        <option>Bengo</option><option>Benguela</option><option>BiÃÂ©</option>
         <option>Cabinda</option><option>Cuando Cubango</option><option>Cuanza Norte</option>
         <option>Cuanza Sul</option><option>Cunene</option><option>Huambo</option>
-        <option>HuÃ­la</option><option>Icolo e Bengo</option><option>Luanda</option>
+        <option>HuÃÂ­la</option><option>Icolo e Bengo</option><option>Luanda</option>
         <option>Lunda Norte</option><option>Lunda Sul</option><option>Malanje</option>
-        <option>Moxico</option><option>Namibe</option><option>UÃ­ge</option><option>Zaire</option>
+        <option>Moxico</option><option>Namibe</option><option>UÃÂ­ge</option><option>Zaire</option>
       </select>
     </div>
   </div>
 
   <div class="fg-row">
     <div class="fg">
-      <label>MunicÃ­pio</label>
+      <label>MunicÃÂ­pio</label>
       <input type="text" id="municipio" placeholder="Ex: Luanda"/>
     </div>
     <div class="fg">
@@ -199,28 +199,28 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   <div class="ent-opts">
     <label class="eo sel" id="opt-e">
       <input type="radio" name="ent" value="entrega" checked onchange="selEnt(this)"/>
-      <span class="ei">ð</span>
-      <span class="el">Entrega ao domicÃ­lio</span>
-      <span class="eo-ck">â</span>
+      <span class="ei">Ã°ÂÂÂ</span>
+      <span class="el">Entrega ao domicÃÂ­lio</span>
+      <span class="eo-ck">Ã¢ÂÂ</span>
     </label>
     <label class="eo" id="opt-l">
       <input type="radio" name="ent" value="levantamento" onchange="selEnt(this)"/>
-      <span class="ei">ðª</span>
+      <span class="ei">Ã°ÂÂÂª</span>
       <span class="el">Levantamento na loja</span>
-      <span class="eo-ck">â</span>
+      <span class="eo-ck">Ã¢ÂÂ</span>
     </label>
   </div>
 </div>
 
-<p class="bottom-info"><i class="fa-solid fa-lock" style="color:rgba(255,107,157,.7);margin-right:4px"></i>Os seus dados sÃ£o usados <span>apenas para a sua encomenda</span></p>
+<p class="bottom-info"><i class="fa-solid fa-lock" style="color:rgba(255,107,157,.7);margin-right:4px"></i>Os seus dados sÃÂ£o usados <span>apenas para a sua encomenda</span></p>
 
 <div class="nav-bar">
-  <button class="btn-main" onclick="avancar()">Ver o CatÃ¡logo ð</button>
+  <button class="btn-main" onclick="avancar()">Ver o CatÃÂ¡logo Ã°ÂÂÂ</button>
 </div>
 
 <div class="toast" id="toast"></div>
 
-<script src="catalogo.js?v=7"></script>
+<script src="catalogo.js?v=8"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     initTheme(); _syncThemeIcons(); applyThemeColors();
@@ -272,13 +272,13 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
     const entrega  = document.querySelector('input[name="ent"]:checked')?.value || 'entrega';
 
     if (!nome)      { toast('Indique o seu nome!'); return; }
-    if (!telefone)  { toast('Indique o seu telemÃ³vel!'); return; }
+    if (!telefone)  { toast('Indique o seu telemÃÂ³vel!'); return; }
     const telefoneLimpo = telefone.replace(/\D/g, '');
     if (telefoneLimpo.length < 9 || !/^(9|2449)/.test(telefoneLimpo)) {
-      toast('NÃºmero invÃ¡lido â ex: 9XX XXX XXX'); return;
+      toast('NÃÂºmero invÃÂ¡lido Ã¢ÂÂ ex: 9XX XXX XXX'); return;
     }
-    if (!provincia) { toast('Selecione a provÃ­ncia!'); return; }
-    if (!municipio) { toast('Indique o municÃ­pio!'); return; }
+    if (!provincia) { toast('Selecione a provÃÂ­ncia!'); return; }
+    if (!municipio) { toast('Indique o municÃÂ­pio!'); return; }
     if (!bairro)    { toast('Indique o bairro / rua!'); return; }
 
     // Guardar dados e limpar carrinho apenas se for cliente novo

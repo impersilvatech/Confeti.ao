@@ -1,4 +1,4 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 24/03/2026, 18:54:47
+// CONFETI — catalogo.js v2.0 — Gerado em: 24/03/2026, 19:09:05
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
@@ -42,7 +42,7 @@ const LOJA_DEFAULT = {
   "secCtaActiva": true,
   "campoDataActivo": true,
   "campoLocalActivo": true,
-  "cf_versao": 7
+  "cf_versao": 8
 };
 const DEPOIMENTOS_DEFAULT = [
   {
@@ -313,15 +313,15 @@ const PRODUTOS_DEFAULT = [
   },
   {
     "id": 201,
-    "categoria": "salgados",
     "nome": "Coxinhas (50 unidades)",
     "preco": 8500,
     "preco_orig": 10000,
+    "categoria": "salgados",
     "etiqueta": "promo",
     "emoji": "🍗",
-    "imagem": "",
-    "disponivel": true,
+    "imagem": "imagens/coxinhas-50-unidades-leqz.webp",
     "descricao": "Coxinhas de frango crocantes por fora, recheadas com frango desfiado temperado e requeijão.",
+    "disponivel": true,
     "specs": {
       "Quantidade": "50 unidades",
       "Recheio": "Frango com requeijão",
@@ -332,19 +332,23 @@ const PRODUTOS_DEFAULT = [
       "Massa crocante",
       "Recheio generoso",
       "Entrega quentes disponível"
+    ],
+    "galeria": [
+      "imagens/coxinhas-50-unidades-galeria-spsb.webp",
+      "imagens/coxinhas-50-unidades-galeria-mga1.webp"
     ]
   },
   {
     "id": 202,
-    "categoria": "salgados",
     "nome": "Rissóis (50 unidades)",
     "preco": 8000,
     "preco_orig": 0,
+    "categoria": "salgados",
     "etiqueta": "",
     "emoji": "🥟",
-    "imagem": "",
-    "disponivel": true,
+    "imagem": "imagens/rissois-50-unidades-qqi3.webp",
     "descricao": "Rissóis clássicos recheados com camarão ou carne. Massa macia, fritos na hora.",
+    "disponivel": true,
     "specs": {
       "Quantidade": "50 unidades",
       "Recheio": "Camarão ou Carne (à escolha)",
@@ -354,7 +358,8 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Receita tradicional",
       "Recheio à escolha"
-    ]
+    ],
+    "galeria": []
   },
   {
     "id": 203,
@@ -379,15 +384,15 @@ const PRODUTOS_DEFAULT = [
   },
   {
     "id": 204,
-    "categoria": "salgados",
     "nome": "Mix de Salgados (100 un.)",
     "preco": 18000,
     "preco_orig": 24000,
+    "categoria": "salgados",
     "etiqueta": "promo",
     "emoji": "🎊",
-    "imagem": "",
-    "disponivel": true,
+    "imagem": "imagens/mix-de-salgados-100-un-ymyu.webp",
     "descricao": "Combinação perfeita: 35 coxinhas + 35 rissóis + 30 pastéis. Ideal para festas.",
+    "disponivel": true,
     "specs": {
       "Quantidade": "100 unidades",
       "Composição": "35 Coxinhas + 35 Rissóis + 30 Pastéis",
@@ -397,19 +402,20 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Variedade garantida",
       "Melhor custo-benefício"
-    ]
+    ],
+    "galeria": []
   },
   {
     "id": 205,
-    "categoria": "salgados",
     "nome": "Mini Salgados Finos (80 un.)",
     "preco": 16000,
     "preco_orig": 0,
+    "categoria": "salgados",
     "etiqueta": "novo",
     "emoji": "✨",
-    "imagem": "",
-    "disponivel": true,
+    "imagem": "imagens/mini-salgados-finos-80-un-qb2e.webp",
     "descricao": "Salgados em formato mini para mesas de finger food. Apresentação elegante, ideais para eventos formais.",
+    "disponivel": true,
     "specs": {
       "Quantidade": "80 unidades",
       "Variedades": "Mini coxinhas + Bruschettas + Wraps",
@@ -419,19 +425,20 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Apresentação elegante",
       "Bandeja decorada incluída"
-    ]
+    ],
+    "galeria": []
   },
   {
     "id": 301,
-    "categoria": "kits",
     "nome": "Kit Natal Familiar",
     "preco": 35000,
     "preco_orig": 42000,
+    "categoria": "kits",
     "etiqueta": "promo",
     "emoji": "🎄",
-    "imagem": "",
-    "disponivel": true,
+    "imagem": "imagens/kit-natal-familiar-0wa7.webp",
     "descricao": "Kit completo para a ceia de Natal: bolo temático + 50 salgados + mesa de doces para 10 pessoas.",
+    "disponivel": true,
     "specs": {
       "Inclui": "Bolo Natal + 50 Salgados + Mesa Doces",
       "Para": "8 a 12 pessoas",
@@ -441,19 +448,20 @@ const PRODUTOS_DEFAULT = [
       "Tudo incluído",
       "Decoração natalícia",
       "Poupança de 7.000 Kz"
-    ]
+    ],
+    "galeria": []
   },
   {
     "id": 302,
-    "categoria": "kits",
     "nome": "Kit Ano Novo Celebração",
     "preco": 38000,
     "preco_orig": 46000,
+    "categoria": "kits",
     "etiqueta": "promo",
     "emoji": "🎆",
-    "imagem": "",
-    "disponivel": true,
+    "imagem": "imagens/kit-ano-novo-celebracao-le2e.webp",
     "descricao": "Bolo de passagem de ano + 60 salgados + doces finos + decoração dourada.",
+    "disponivel": true,
     "specs": {
       "Inclui": "Bolo + 60 Salgados + Doces Finos",
       "Para": "10 a 15 pessoas",
@@ -463,19 +471,20 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Decoração premium",
       "Confettis e balões incluídos"
-    ]
+    ],
+    "galeria": []
   },
   {
     "id": 303,
-    "categoria": "kits",
     "nome": "Kit Festa Infantil",
     "preco": 28000,
     "preco_orig": 34000,
+    "categoria": "kits",
     "etiqueta": "promo",
     "emoji": "🎠",
-    "imagem": "",
-    "disponivel": true,
+    "imagem": "imagens/kit-festa-infantil-8bjp.webp",
     "descricao": "Bolo temático + 40 salgados + mesa de doces colorida. Tema à escolha.",
+    "disponivel": true,
     "specs": {
       "Inclui": "Bolo Temático + 40 Salgados + Mesa Doces",
       "Para": "15 a 25 crianças",
@@ -485,19 +494,20 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Tema totalmente personalizável",
       "Lembranças incluídas"
-    ]
+    ],
+    "galeria": []
   },
   {
     "id": 304,
-    "categoria": "kits",
     "nome": "Kit Casamento Completo",
     "preco": 120000,
     "preco_orig": 150000,
+    "categoria": "kits",
     "etiqueta": "destaque",
     "emoji": "💒",
-    "imagem": "",
-    "disponivel": true,
+    "imagem": "imagens/kit-casamento-completo-d3nm.webp",
     "descricao": "Pacote completo: bolo de casamento + 200 salgados + mesa de doces + candy bar. Consultoria incluída.",
+    "disponivel": true,
     "specs": {
       "Inclui": "Bolo + 200 Salgados + Mesa + Candy Bar",
       "Para": "50 a 100 convidados",
@@ -508,7 +518,8 @@ const PRODUTOS_DEFAULT = [
       "Consultoria personalizada",
       "Montagem no local",
       "Tudo coordenado"
-    ]
+    ],
+    "galeria": []
   },
   {
     "id": 401,

@@ -24,7 +24,7 @@
         if(els.length){els.forEach(function(el){el.textContent=n;});}
       });
       obs.observe(document.documentElement,{childList:true,subtree:true});
-      // Parar observer apÃ³s carregar
+      // Parar observer apÃÂ³s carregar
       document.addEventListener('DOMContentLoaded',function(){obs.disconnect();});
     }
   }catch(_){}
@@ -91,32 +91,32 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
 </head>
 <body>
 <div class="suc" id="suc">
-  <div class="suc-confetti">ð</div>
+  <div class="suc-confetti">Ã°ÂÂÂ</div>
   <h2>Encomenda Enviada!</h2>
-  <p>A sua encomenda foi enviada pelo WhatsApp. A nossa equipa irÃ¡ confirmar e combinar todos os detalhes!</p>
-  <button class="btn-novo" onclick="novoPedido()">Nova Encomenda ð</button>
+  <p>A sua encomenda foi enviada pelo WhatsApp. A nossa equipa irÃÂ¡ confirmar e combinar todos os detalhes!</p>
+  <button class="btn-novo" onclick="novoPedido()">Nova Encomenda Ã°ÂÂÂ</button>
   <button class="btn-reenv" onclick="reenviar()">Reenviar pelo WhatsApp</button>
 </div>
 <div id="conteudo">
   <header class="hdr">
     <button class="btn-bk" onclick="history.back()"><i class="fa-solid fa-arrow-left"></i></button>
-    <div class="hdr-titulo">ð§¾ Confirmar</div>
+    <div class="hdr-titulo">Ã°ÂÂ§Â¾ Confirmar</div>
     <button class="btn-th" onclick="toggleTheme()"><i data-theme-ico class="fa-solid fa-sun"></i></button>
   </header>
   <div class="sec" id="sec-cli"></div>
   <div class="sec" id="sec-items"></div>
   <div class="total-blk" id="total-blk"></div>
-  <div class="form-row" id="row-data"><label class="form-lbl">ð Data do evento (obrigatÃ³rio)</label><input type="date" class="form-inp" id="data-evento"/></div>
-  <div class="form-row" id="row-local"><label class="form-lbl">ð Local de entrega / levantamento</label><input type="text" class="form-inp" id="local-ent" placeholder="Ex: Bairro Morro Bento, Luanda â ou Levantamento na loja"/></div>
-  <div class="form-row"><label class="form-lbl">ð ObservaÃ§Ãµes finais (opcional)</label><textarea class="form-ta" id="obs-final" placeholder="InformaÃ§Ãµes adicionais, contacto alternativo..."></textarea></div>
-  <div class="aviso">ApÃ³s enviar, a nossa equipa irÃ¡ contactÃ¡-lo para confirmar a encomenda e combinar o pagamento.</div>
+  <div class="form-row" id="row-data"><label class="form-lbl">Ã°ÂÂÂ Data do evento (obrigatÃÂ³rio)</label><input type="date" class="form-inp" id="data-evento"/></div>
+  <div class="form-row" id="row-local"><label class="form-lbl">Ã°ÂÂÂ Local de entrega / levantamento</label><input type="text" class="form-inp" id="local-ent" placeholder="Ex: Bairro Morro Bento, Luanda Ã¢ÂÂ ou Levantamento na loja"/></div>
+  <div class="form-row"><label class="form-lbl">Ã°ÂÂÂ ObservaÃÂ§ÃÂµes finais (opcional)</label><textarea class="form-ta" id="obs-final" placeholder="InformaÃÂ§ÃÂµes adicionais, contacto alternativo..."></textarea></div>
+  <div class="aviso">ApÃÂ³s enviar, a nossa equipa irÃÂ¡ contactÃÂ¡-lo para confirmar a encomenda e combinar o pagamento.</div>
   <div class="nav">
     <button class="btn-bk-nav" onclick="window.location.href='carrinho.html'"><i class="fa-solid fa-arrow-left"></i></button>
-    <button class="btn-wpp" onclick="enviar()">ð² Enviar Encomenda</button>
+    <button class="btn-wpp" onclick="enviar()">Ã°ÂÂÂ² Enviar Encomenda</button>
   </div>
 </div>
 <div class="toast" id="toast"></div>
-<script src="catalogo.js?v=7"></script>
+<script src="catalogo.js?v=8"></script>
 <script>
   let _loja,_car,_nota,_msgWpp='';
   document.addEventListener('DOMContentLoaded',()=>{
@@ -137,15 +137,15 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
   });
   function render(){
     const cli=JSON.parse(localStorage.getItem('cf_cliente')||'null');
-    if(cli){document.getElementById('sec-cli').innerHTML=`<h3>ð¤ Dados do cliente</h3>${[['Nome',cli.nome],['TelemÃ³vel',cli.telefone||'â'],['ProvÃ­ncia',cli.provincia||'â'],['MunicÃ­pio',cli.municipio||'â'],['Bairro',cli.bairro||'â']].map(([l,v])=>`<div class="i-row"><span class="il">${l}</span><span class="iv">${v}</span></div>`).join('')}`;}
+    if(cli){document.getElementById('sec-cli').innerHTML=`<h3>Ã°ÂÂÂ¤ Dados do cliente</h3>${[['Nome',cli.nome],['TelemÃÂ³vel',cli.telefone||'Ã¢ÂÂ'],['ProvÃÂ­ncia',cli.provincia||'Ã¢ÂÂ'],['MunicÃÂ­pio',cli.municipio||'Ã¢ÂÂ'],['Bairro',cli.bairro||'Ã¢ÂÂ']].map(([l,v])=>`<div class="i-row"><span class="il">${l}</span><span class="iv">${v}</span></div>`).join('')}`;}
     else document.getElementById('sec-cli').style.display='none';
     const total=_car.reduce((s,i)=>s+i.preco*i.quantidade,0);
     let iHtml=`<h3><i class="fa-solid fa-cart-shopping" style="margin-right:5px;color:var(--pink)"></i>Encomenda (${_car.reduce((s,i)=>s+i.quantidade,0)} items)</h3>`;
     _car.forEach(item=>{
       const imgH=item.imagem?`<img src="${item.imagem}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:1.2rem">${item.emoji}</span>`:item.emoji;
-      iHtml+=`<div class="o-item"><div class="o-ico">${imgH}</div><div class="o-info"><div class="o-nome">${item.nome}</div><div class="o-qtd">${item.quantidade}Ã Â· ${kz(item.preco)}</div>${item.nota?`<div class="o-nota">ð ${item.nota}</div>`:''}</div><div class="o-sub">${kz(item.preco*item.quantidade)}</div></div>`;
+      iHtml+=`<div class="o-item"><div class="o-ico">${imgH}</div><div class="o-info"><div class="o-nome">${item.nome}</div><div class="o-qtd">${item.quantidade}ÃÂ ÃÂ· ${kz(item.preco)}</div>${item.nota?`<div class="o-nota">Ã°ÂÂÂ ${item.nota}</div>`:''}</div><div class="o-sub">${kz(item.preco*item.quantidade)}</div></div>`;
     });
-    if(_nota)iHtml+=`<div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border);font-size:.76rem;color:var(--muted)">ð <em>${_nota}</em></div>`;
+    if(_nota)iHtml+=`<div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border);font-size:.76rem;color:var(--muted)">Ã°ÂÂÂ <em>${_nota}</em></div>`;
     document.getElementById('sec-items').innerHTML=iHtml;
     document.getElementById('total-blk').innerHTML=`<div><div class="tl">Total estimado</div><div style="font-size:.62rem;color:var(--muted2);margin-top:2px">Entrega a combinar</div></div><div class="tv">${kz(total)}</div>`;
   }
@@ -161,15 +161,15 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     const dataFmt=dataActiva&&dataEl&&dataEl.value?new Date(dataEl.value+'T12:00:00').toLocaleDateString('pt-PT',{weekday:'long',day:'numeric',month:'long',year:'numeric'}):'';
     const local=localActiva&&localEl?localEl.value.trim():'';
     const obs=document.getElementById('obs-final').value.trim();
-    let m=`ð *ENCOMENDA â ${_loja.nome}*\n\n`;
-    if(cli)m+=`ð¤ *${cli.nome}* | ${cli.telefone||''}\nð ${cli.provincia||''} / ${cli.municipio||''} / ${cli.bairro||''}\n\n`;
-    if(dataFmt)m+=`ð *Data do evento:* ${dataFmt}\n`;
-    if(local)m+=`ð *Local:* ${local}\n`;
-    m+=`\nð *ENCOMENDA:*\n`;
-    _car.forEach((i,idx)=>{m+=`${idx+1}. *${i.nome}* Ã${i.quantidade} â ${kz(i.preco*i.quantidade)}\n`;if(i.nota)m+=`   ð ${i.nota}\n`;});
-    if(_nota)m+=`\nð *Nota geral:* ${_nota}\n`;
-    if(obs)m+=`\nð¬ *ObservaÃ§Ãµes:* ${obs}\n`;
-    m+=`\nð° *TOTAL ESTIMADO: ${kz(total)}*\n_(entrega a combinar)_\n\n_Aguardo confirmaÃ§Ã£o. Obrigado!_ ð`;
+    let m=`Ã°ÂÂÂ *ENCOMENDA Ã¢ÂÂ ${_loja.nome}*\n\n`;
+    if(cli)m+=`Ã°ÂÂÂ¤ *${cli.nome}* | ${cli.telefone||''}\nÃ°ÂÂÂ ${cli.provincia||''} / ${cli.municipio||''} / ${cli.bairro||''}\n\n`;
+    if(dataFmt)m+=`Ã°ÂÂÂ *Data do evento:* ${dataFmt}\n`;
+    if(local)m+=`Ã°ÂÂÂ *Local:* ${local}\n`;
+    m+=`\nÃ°ÂÂÂ *ENCOMENDA:*\n`;
+    _car.forEach((i,idx)=>{m+=`${idx+1}. *${i.nome}* ÃÂ${i.quantidade} Ã¢ÂÂ ${kz(i.preco*i.quantidade)}\n`;if(i.nota)m+=`   Ã°ÂÂÂ ${i.nota}\n`;});
+    if(_nota)m+=`\nÃ°ÂÂÂ *Nota geral:* ${_nota}\n`;
+    if(obs)m+=`\nÃ°ÂÂÂ¬ *ObservaÃÂ§ÃÂµes:* ${obs}\n`;
+    m+=`\nÃ°ÂÂÂ° *TOTAL ESTIMADO: ${kz(total)}*\n_(entrega a combinar)_\n\n_Aguardo confirmaÃÂ§ÃÂ£o. Obrigado!_ Ã°ÂÂÂ`;
     _msgWpp=m;
     sessionStorage.setItem('cf_pedido_ok','1');sessionStorage.setItem('cf_msg',m);sessionStorage.setItem('cf_num',_loja.whatsapp.replace(/\D/g,''));
     mostrarSucesso();
