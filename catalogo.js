@@ -1,4 +1,4 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 24/03/2026, 14:06:14
+// CONFETI — catalogo.js v2.0 — Gerado em: 24/03/2026, 14:13:48
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
@@ -42,7 +42,7 @@ const LOJA_DEFAULT = {
   "secCtaActiva": true,
   "campoDataActivo": true,
   "campoLocalActivo": true,
-  "cf_versao": 4
+  "cf_versao": 5
 };
 const DEPOIMENTOS_DEFAULT = [
   {
@@ -233,7 +233,12 @@ const PRODUTOS_DEFAULT = [
       "Tema personalizado",
       "Fotos para referência aceites"
     ],
-    "galeria": []
+    "galeria": [
+      "imagens/bolo-tematico-festa-galeria-rxc9.webp",
+      "imagens/bolo-tematico-festa-galeria-iv3g.webp",
+      "imagens/bolo-tematico-festa-galeria-tyj9.webp",
+      "imagens/bolo-tematico-festa-galeria-yu5s.webp"
+    ]
   },
   {
     "id": 103,
