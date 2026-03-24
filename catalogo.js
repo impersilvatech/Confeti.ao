@@ -1,4 +1,4 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 24/03/2026, 13:47:59
+// CONFETI — catalogo.js v2.0 — Gerado em: 24/03/2026, 14:01:12
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
@@ -42,7 +42,7 @@ const LOJA_DEFAULT = {
   "secCtaActiva": true,
   "campoDataActivo": true,
   "campoLocalActivo": true,
-  "cf_versao": 2
+  "cf_versao": 3
 };
 const DEPOIMENTOS_DEFAULT = [
   {
@@ -236,15 +236,15 @@ const PRODUTOS_DEFAULT = [
   },
   {
     "id": 103,
-    "categoria": "bolos",
     "nome": "Bolo de Baptizado",
     "preco": 22000,
     "preco_orig": 0,
+    "categoria": "bolos",
     "etiqueta": "novo",
     "emoji": "👶",
-    "imagem": "",
-    "disponivel": true,
+    "imagem": "imagens/bolo-de-baptizado-o6li.webp",
     "descricao": "Bolo delicado para baptizados, com decoração em tons suaves. Laços, flores e detalhes em fondant.",
+    "disponivel": true,
     "specs": {
       "Tamanhos": "20 ou 25 cm",
       "Sabores": "Baunilha / Leite de Coco / Morango",
@@ -255,7 +255,8 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Paleta de cores personalizável",
       "Entrega incluída em Luanda"
-    ]
+    ],
+    "galeria": []
   },
   {
     "id": 104,
@@ -282,15 +283,15 @@ const PRODUTOS_DEFAULT = [
   },
   {
     "id": 105,
-    "categoria": "bolos",
     "nome": "Bolo de Natal Especial",
     "preco": 20000,
     "preco_orig": 0,
+    "categoria": "bolos",
     "etiqueta": "novo",
     "emoji": "🎄",
-    "imagem": "",
-    "disponivel": true,
+    "imagem": "imagens/bolo-de-natal-especial-41nn.webp",
     "descricao": "Bolo temático de Natal com decoração em vermelho, verde e dourado. Perfeito para a ceia.",
+    "disponivel": true,
     "specs": {
       "Tamanhos": "25 ou 30 cm",
       "Sabores": "Chocolate com Nozes / Panetone / Baunilha",
@@ -301,7 +302,8 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Edição limitada de Natal",
       "Decoração personalizada"
-    ]
+    ],
+    "galeria": []
   },
   {
     "id": 201,
