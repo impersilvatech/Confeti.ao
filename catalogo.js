@@ -1,13 +1,13 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 24/03/2026, 13:34:01
+// CONFETI — catalogo.js v2.0 — Gerado em: 24/03/2026, 13:47:59
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
-  "nome": "CONFETI",
+  "nome": "YOLELI BOLOS 🍰",
   "tagline": "Doces para cada momento especial",
   "slogan": "Criamos sabores que ficam na memória. Do casamento à festa de natal, cada detalhe conta.",
   "whatsapp": "244954288128",
   "logo": "",
-  "morada": "Luanda, Angola",
+  "morada": "Huambo, Angola",
   "instagram": "",
   "badge": "🎊 Confeitaria Artesanal · Luanda",
   "heroTitulo": "Doces que fazem\na festa!",
@@ -42,7 +42,7 @@ const LOJA_DEFAULT = {
   "secCtaActiva": true,
   "campoDataActivo": true,
   "campoLocalActivo": true,
-  "cf_versao": 1
+  "cf_versao": 2
 };
 const DEPOIMENTOS_DEFAULT = [
   {
