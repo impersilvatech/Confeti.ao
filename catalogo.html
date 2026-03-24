@@ -2,7 +2,7 @@
 <html lang="pt-AO" data-theme="dark">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Catálogo | CONFETI</title>
+<title>CatÃ¡logo | CONFETI</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <script>(function(){var t=localStorage.getItem('cf_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})()</script>
 <script>(function(){
@@ -24,7 +24,7 @@
         if(els.length){els.forEach(function(el){el.textContent=n;});}
       });
       obs.observe(document.documentElement,{childList:true,subtree:true});
-      // Parar observer após carregar
+      // Parar observer apÃ³s carregar
       document.addEventListener('DOMContentLoaded',function(){obs.disconnect();});
     }
   }catch(_){}
@@ -186,8 +186,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
   <div style="display:flex;align-items:center;gap:8px">
     <button class="wl-toggle" id="wl-toggle-btn" onclick="toggleWlView()"><i class="fa-solid fa-heart" style="margin-right:4px"></i>Wishlist</button>
     <div class="view-toggle">
-      <button class="vt on" id="vt-grid" onclick="setView('grid')" title="Grelha">⊞</button>
-      <button class="vt" id="vt-list" onclick="setView('list')" title="Lista">☰</button>
+      <button class="vt on" id="vt-grid" onclick="setView('grid')" title="Grelha">â</button>
+      <button class="vt" id="vt-list" onclick="setView('list')" title="Lista">â°</button>
     </div>
   </div>
 </div>
@@ -217,13 +217,13 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     <div id="qty-sec">
       <div class="sh-sec-t">Quantidade</div>
       <div class="qty-row">
-        <button class="qty-btn" onclick="qty(-1)">−</button>
+        <button class="qty-btn" onclick="qty(-1)">â</button>
         <span class="qty-val" id="qty-val">1</span>
         <button class="qty-btn" onclick="qty(1)">+</button>
       </div>
     </div>
-    <div class="sh-sec-t">Personalização / Nota</div>
-    <textarea class="sh-nota" id="sh-nota" placeholder="Tema, cor, sabor, data do evento, número de pessoas..."></textarea>
+    <div class="sh-sec-t">PersonalizaÃ§Ã£o / Nota</div>
+    <textarea class="sh-nota" id="sh-nota" placeholder="Tema, cor, sabor, data do evento, nÃºmero de pessoas..."></textarea>
     <div class="sh-btns">
       <button class="btn-sh-det" id="btn-sh-det">Ver detalhes</button>
       <button class="btn-sh-add" id="btn-sh-add" onclick="addCart()"><i class="fa-solid fa-cart-plus" style="margin-right:5px"></i>Adicionar</button>
@@ -233,10 +233,10 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
 
 <div class="pers-ov" id="pers-ov">
   <div class="pers-sh">
-    <div class="pers-h">✨ Encomenda Especial</div>
-    <p class="pers-s">Tem uma ideia especial? Descreva o seu evento e nós criamos algo único para si!</p>
+    <div class="pers-h">â¨ Encomenda Especial</div>
+    <p class="pers-s">Tem uma ideia especial? Descreva o seu evento e nÃ³s criamos algo Ãºnico para si!</p>
     <textarea class="pers-ta" id="pers-ta" placeholder="Ex: Mesa de doces para casamento de 80 pessoas, tema floral, cores rosa e dourado..."></textarea>
-    <button class="btn-pers-env" onclick="enviarPers()">📲 Enviar Pedido pelo WhatsApp</button>
+    <button class="btn-pers-env" onclick="enviarPers()">ð² Enviar Pedido pelo WhatsApp</button>
     <button class="btn-pers-c" onclick="fecharPers()">Cancelar</button>
   </div>
 </div>
@@ -246,7 +246,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
   <button class="btn-cart-nav" id="btn-cart" disabled onclick="irCarrinho()">Ver Carrinho</button>
 </div>
 <div class="toast" id="toast"></div>
-<script src="catalogo.js?v=1"></script>
+<script src="catalogo.js?v=12"></script>
 <script>
   let _loja,_cats,_prods,_catA='',_busca='',_ps=null,_qty=1,_viewMode='grid',_wlMode=false;
 
@@ -255,7 +255,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     if(!localStorage.getItem('cf_cliente')){window.location.href='dados.html';return;}
     _loja=getLoja();_cats=getCategorias();_prods=getProdutos();
     document.getElementById('hdr-nome').textContent=_loja.nome;
-    document.title='Catálogo | '+_loja.nome;
+    document.title='CatÃ¡logo | '+_loja.nome;
     buildCats();actuCart();actuWlBadge();
     const ini=sessionStorage.getItem('cf_cat_ini');
     if(ini){const btn=document.querySelector(`.cat-btn[data-id="${ini}"]`);if(btn)filtrar(btn,ini);else render();}
@@ -270,7 +270,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
       const b=document.createElement('button');b.className='cat-btn';b.dataset.id=c.id;
       b.innerHTML=`${c.emoji} ${c.label}`;b.onclick=()=>filtrar(b,c.id);bar.appendChild(b);
     });
-    if(_loja.pedidoPersActivo){const bp=document.createElement('button');bp.className='cat-btn';bp.style.color='var(--coral)';bp.textContent='💌 Especial';bp.onclick=()=>abrirPers();bar.appendChild(bp);}
+    if(_loja.pedidoPersActivo){const bp=document.createElement('button');bp.className='cat-btn';bp.style.color='var(--coral)';bp.textContent='ð Especial';bp.onclick=()=>abrirPers();bar.appendChild(bp);}
   }
   function filtrar(btn,cat){document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('on'));if(btn)btn.classList.add('on');_catA=cat;_wlMode=false;document.getElementById('wl-toggle-btn').classList.remove('on');render();}
   function pesquisar(v){_busca=v.trim().toLowerCase();document.getElementById('sclr').classList.toggle('on',!!_busca);_wlMode=false;render();}
@@ -283,7 +283,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     let lista=_prods;
     if(_wlMode){
       const wl=getWishlist();lista=lista.filter(p=>wl.includes(p.id));
-      if(!lista.length){grid.innerHTML=`<div class="wl-empty" style="grid-column:1/-1"><div class="wl-empty-ico"><i class="fa-solid fa-heart" style="font-size:3rem;opacity:.25;color:var(--pink)"></i></div><p>A sua wishlist está vazia</p><button style="padding:10px 22px;background:var(--grad);border:none;border-radius:50px;font-family:var(--ft);font-size:.78rem;color:#fff;cursor:pointer" onclick="toggleWlView()">Ver Catálogo</button></div>`;empty.style.display='none';document.getElementById('result-txt').textContent='Wishlist';return;}
+      if(!lista.length){grid.innerHTML=`<div class="wl-empty" style="grid-column:1/-1"><div class="wl-empty-ico"><i class="fa-solid fa-heart" style="font-size:3rem;opacity:.25;color:var(--pink)"></i></div><p>A sua wishlist estÃ¡ vazia</p><button style="padding:10px 22px;background:var(--grad);border:none;border-radius:50px;font-family:var(--ft);font-size:.78rem;color:#fff;cursor:pointer" onclick="toggleWlView()">Ver CatÃ¡logo</button></div>`;empty.style.display='none';document.getElementById('result-txt').textContent='Wishlist';return;}
     } else {
       if(_catA)lista=lista.filter(p=>p.categoria===_catA);
       if(_busca)lista=lista.filter(p=>p.nome.toLowerCase().includes(_busca)||(p.descricao||'').toLowerCase().includes(_busca));
@@ -294,9 +294,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     const catMap=Object.fromEntries(_cats.map(c=>[c.id,c.label]));
     grid.innerHTML=lista.map(p=>{
       const pct=p.preco_orig>0?Math.round((1-p.preco/p.preco_orig)*100):0;
-      const tag=p.etiqueta||'';const tl={promo:`-${pct}%`,novo:'Novo',destaque:'⭐',especial:'Especial'}[tag]||'';
+      const tag=p.etiqueta||'';const tl={promo:`-${pct}%`,novo:'Novo',destaque:'â­',especial:'Especial'}[tag]||'';
       const imgH=p.imagem?`<img src="${p.imagem}" alt="" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><span class="pcard-emoji" style="display:none">${p.emoji}</span>`:`<span class="pcard-emoji">${p.emoji}</span>`;
-      const precoH=p.preco>0?`<span class="pcard-val">${kz(p.preco)}</span>${p.preco_orig>0?`<span class="pcard-orig">${kz(p.preco_orig)}</span>`:''}`:`<span class="pcard-val orcamento">Pedir orçamento</span>`;
+      const precoH=p.preco>0?`<span class="pcard-val">${kz(p.preco)}</span>${p.preco_orig>0?`<span class="pcard-orig">${kz(p.preco_orig)}</span>`:''}`:`<span class="pcard-val orcamento">Pedir orÃ§amento</span>`;
       const wishedClass=isWishlisted(p.id)?'on':'';
       return`<div class="${!p.disponivel?'pcard esgotado':'pcard'}" onclick="openSheet(${p.id})">
         <div class="pcard-img">${imgH}${tag?`<span class="ptag ptag-${tag}">${tl}</span>`:''}
@@ -317,13 +317,13 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     btn.innerHTML=added?'<i class="fa-solid fa-heart"></i>':'<i class="fa-regular fa-heart"></i>';
     btn.classList.toggle('on',added);
     actuWlBadge();
-    toast(added?'Adicionado à wishlist ❤️':'Removido da wishlist','wl');
+    toast(added?'Adicionado Ã  wishlist â¤ï¸':'Removido da wishlist','wl');
   }
   function actuWlBadge(){const n=getWishlist().length;const b=document.getElementById('wl-badge');b.textContent=n;b.classList.toggle('on',n>0);}
 
   function openSheet(id){
     const p=_prods.find(x=>x.id===id);if(!p)return;
-    if(!p.disponivel){toast('Produto esgotado — em breve de volta! 🙈','err');return;}
+    if(!p.disponivel){toast('Produto esgotado â em breve de volta! ð','err');return;}
     if(p.categoria==='especial'){abrirPers();return;}
     _ps=p;_qty=1;
     const si=document.getElementById('sh-img');
@@ -331,14 +331,14 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     document.getElementById('sh-cat').textContent=_cats.find(c=>c.id===p.categoria)?.label||'';
     document.getElementById('sh-nome').textContent=p.nome;
     const pEl=document.getElementById('sh-preco');
-    if(p.preco>0){pEl.textContent=kz(p.preco);pEl.className='sh-preco';}else{pEl.textContent='Pedir orçamento';pEl.className='sh-preco orcamento';}
+    if(p.preco>0){pEl.textContent=kz(p.preco);pEl.className='sh-preco';}else{pEl.textContent='Pedir orÃ§amento';pEl.className='sh-preco orcamento';}
     const oEl=document.getElementById('sh-orig'),pcEl=document.getElementById('sh-pct');
     if(p.preco_orig>0){oEl.textContent=kz(p.preco_orig);oEl.style.display='';pcEl.textContent=`-${Math.round((1-p.preco/p.preco_orig)*100)}%`;pcEl.style.display='';}
     else{oEl.style.display='none';pcEl.style.display='none';}
     document.getElementById('sh-desc').textContent=p.descricao||'';
-    document.getElementById('sh-dests').innerHTML=(p.destaques||[]).map(d=>`<span class="sh-dest-it">✓ ${d}</span>`).join('');
+    document.getElementById('sh-dests').innerHTML=(p.destaques||[]).map(d=>`<span class="sh-dest-it">â ${d}</span>`).join('');
     document.getElementById('qty-val').textContent=1;
-    document.getElementById('btn-sh-add').textContent=p.preco>0?`Adicionar — ${kz(p.preco)}`:'Solicitar Orçamento →';
+    document.getElementById('btn-sh-add').textContent=p.preco>0?`Adicionar â ${kz(p.preco)}`:'Solicitar OrÃ§amento â';
     document.getElementById('sh-nota').value='';
     document.getElementById('btn-sh-det').onclick=()=>irDetalhe(p.id);
     document.getElementById('qty-sec').style.display=p.preco===0?'none':'';
@@ -347,26 +347,26 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     document.body.style.overflow='hidden';
   }
   function fecharSheet(){document.getElementById('overlay').classList.remove('on');document.getElementById('sheet').classList.remove('on');document.body.style.overflow='';}
-  function qty(d){_qty=Math.max(1,Math.min(99,_qty+d));document.getElementById('qty-val').textContent=_qty;if(_ps?.preco>0)document.getElementById('btn-sh-add').textContent=`Adicionar — ${kz(_ps.preco*_qty)}`;}
+  function qty(d){_qty=Math.max(1,Math.min(99,_qty+d));document.getElementById('qty-val').textContent=_qty;if(_ps?.preco>0)document.getElementById('btn-sh-add').textContent=`Adicionar â ${kz(_ps.preco*_qty)}`;}
   function addCart(){
     if(!_ps)return;
     const nota=document.getElementById('sh-nota').value.trim();
     if(_ps.preco===0){enviarOrcamento(_ps,nota);return;}
     const c=getCarrinho();
     c.push({chave:`${_ps.id}-${Date.now()}`,produto_id:_ps.id,nome:_ps.nome,preco:_ps.preco,quantidade:_qty,imagem:_ps.imagem||'',emoji:_ps.emoji,nota});
-    salvarCarrinho(c);fecharSheet();actuCart();toast(`✓ ${_ps.nome} adicionado`,'ok');
+    salvarCarrinho(c);fecharSheet();actuCart();toast(`â ${_ps.nome} adicionado`,'ok');
   }
   function addDireto(id){
     const p=_prods.find(x=>x.id===id);if(!p)return;
-    if(!p.disponivel){toast('Produto esgotado! 🙈','err');return;}
+    if(!p.disponivel){toast('Produto esgotado! ð','err');return;}
     if(p.categoria==='especial'){abrirPers();return;}
     if(p.preco===0){enviarOrcamento(p,'');return;}
     const c=getCarrinho();c.push({chave:`${p.id}-${Date.now()}`,produto_id:p.id,nome:p.nome,preco:p.preco,quantidade:1,imagem:p.imagem||'',emoji:p.emoji,nota:''});
-    salvarCarrinho(c);actuCart();toast(`✓ ${p.nome}`,'ok');
+    salvarCarrinho(c);actuCart();toast(`â ${p.nome}`,'ok');
   }
   function enviarOrcamento(p,nota){
     const cli=JSON.parse(localStorage.getItem('cf_cliente')||'{}');
-    let m=`💌 *PEDIDO DE ORÇAMENTO — ${_loja.nome}*\n\n*Produto:* ${p.nome}\n`;
+    let m=`ð *PEDIDO DE ORÃAMENTO â ${_loja.nome}*\n\n*Produto:* ${p.nome}\n`;
     if(nota)m+=`*Detalhes:* ${nota}\n`;
     if(cli.nome)m+=`\n*Cliente:* ${cli.nome} | ${cli.telefone||''}`;
     fecharSheet();window.open(`https://wa.me/${_loja.whatsapp.replace(/\D/g,'')}?text=${encodeURIComponent(m)}`,'_blank');
@@ -384,8 +384,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
   function enviarPers(){
     const txt=document.getElementById('pers-ta').value.trim();if(!txt){toast('Descreva o pedido.','err');return;}
     const cli=JSON.parse(localStorage.getItem('cf_cliente')||'{}');
-    let m=`💌 *ENCOMENDA ESPECIAL — ${_loja.nome}*\n\n${txt}`;
-    if(cli.nome)m+=`\n\n👤 ${cli.nome} | ${cli.telefone||''}`;
+    let m=`ð *ENCOMENDA ESPECIAL â ${_loja.nome}*\n\n${txt}`;
+    if(cli.nome)m+=`\n\nð¤ ${cli.nome} | ${cli.telefone||''}`;
     fecharPers();window.open(`https://wa.me/${_loja.whatsapp.replace(/\D/g,'')}?text=${encodeURIComponent(m)}`,'_blank');
   }
   let _toastTimer=null;
