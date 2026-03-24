@@ -1,4 +1,4 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 24/03/2026, 14:01:12
+// CONFETI — catalogo.js v2.0 — Gerado em: 24/03/2026, 14:06:14
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
@@ -42,7 +42,7 @@ const LOJA_DEFAULT = {
   "secCtaActiva": true,
   "campoDataActivo": true,
   "campoLocalActivo": true,
-  "cf_versao": 3
+  "cf_versao": 4
 };
 const DEPOIMENTOS_DEFAULT = [
   {
@@ -213,15 +213,15 @@ const PRODUTOS_DEFAULT = [
   },
   {
     "id": 102,
-    "categoria": "bolos",
     "nome": "Bolo Temático Festa",
     "preco": 18000,
     "preco_orig": 22000,
+    "categoria": "bolos",
     "etiqueta": "promo",
     "emoji": "🎂",
-    "imagem": "",
-    "disponivel": true,
+    "imagem": "imagens/bolo-tematico-festa-dz6j.webp",
     "descricao": "Bolo temático personalizado para festas de aniversário, baptizados ou qualquer celebração.",
+    "disponivel": true,
     "specs": {
       "Tamanhos": "20, 25 ou 30 cm",
       "Sabores": "Chocolate / Baunilha / Morango / Coco",
@@ -232,7 +232,8 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Tema personalizado",
       "Fotos para referência aceites"
-    ]
+    ],
+    "galeria": []
   },
   {
     "id": 103,
