@@ -24,7 +24,7 @@
         if(els.length){els.forEach(function(el){el.textContent=n;});}
       });
       obs.observe(document.documentElement,{childList:true,subtree:true});
-      // Parar observer apÃÂÃÂ³s carregar
+      // Parar observer apÃÂÃÂÃÂÃÂ³s carregar
       document.addEventListener('DOMContentLoaded',function(){obs.disconnect();});
     }
   }catch(_){}
@@ -126,11 +126,11 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
   <button class="btn-th" onclick="toggleTheme()"><i data-theme-ico class="fa-solid fa-sun"></i></button>
 </header>
 <div id="hero-container">
-  <!-- Preenchido pelo JS ÃÂ¢ÃÂÃÂ carrossel se tiver galeria, imagem simples se nÃÂÃÂ£o tiver -->
+  <!-- Preenchido pelo JS ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ carrossel se tiver galeria, imagem simples se nÃÂÃÂÃÂÃÂ£o tiver -->
 </div>
 <div class="pd anim">
   <div class="pd-cat" id="pd-cat"></div>
-  <div class="pd-nome" id="pd-nome">ÃÂ¢ÃÂÃÂ</div>
+  <div class="pd-nome" id="pd-nome">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ</div>
   <div class="pd-preco" id="pd-preco"></div>
   <div class="pd-orig-row" id="pd-orig-row" style="display:none"><span class="pd-orig" id="pd-orig"></span><span class="pd-pct" id="pd-pct"></span></div>
   <p class="pd-desc" id="pd-desc"></p>
@@ -139,23 +139,23 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
 <div class="divd"></div>
 <div class="sec" id="sec-qty">
   <div class="sec-t">Quantidade</div>
-  <div class="qty-row"><button class="qty-btn" onclick="qty(-1)">ÃÂ¢ÃÂÃÂ</button><span class="qty-val" id="qty-val">1</span><button class="qty-btn" onclick="qty(1)">+</button></div>
+  <div class="qty-row"><button class="qty-btn" onclick="qty(-1)">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ</button><span class="qty-val" id="qty-val">1</span><button class="qty-btn" onclick="qty(1)">+</button></div>
 </div>
 <div class="sec">
-  <div class="sec-t">PersonalizaÃÂÃÂ§ÃÂÃÂ£o / Nota de encomenda</div>
-  <textarea class="nota-input" id="nota-input" placeholder="Tema, cores, sabores, data do evento, nÃÂÃÂºmero de convidados, observaÃÂÃÂ§ÃÂÃÂµes especiais..."></textarea>
+  <div class="sec-t">PersonalizaÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o / Nota de encomenda</div>
+  <textarea class="nota-input" id="nota-input" placeholder="Tema, cores, sabores, data do evento, nÃÂÃÂÃÂÃÂºmero de convidados, observaÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂµes especiais..."></textarea>
 </div>
 <div class="divd"></div>
 <div class="sec" id="sec-specs" style="display:none"><div class="sec-t">Detalhes do produto</div><div class="specs-card" id="specs-card"></div></div>
 <div class="divd" id="rel-div" style="display:none"></div>
-<div class="sec" id="sec-rel" style="display:none"><div class="sec-t">Veja tambÃÂÃÂ©m</div><div class="related-scroll"><div class="related-inner" id="rel-inner"></div></div></div>
+<div class="sec" id="sec-rel" style="display:none"><div class="sec-t">Veja tambÃÂÃÂÃÂÃÂ©m</div><div class="related-scroll"><div class="related-inner" id="rel-inner"></div></div></div>
 <div class="lightbox" id="lightbox" onclick="fecharLightbox()"><button class="lb-close"><i class="fa-solid fa-xmark"></i></button><img class="lb-img" id="lb-img" src="" alt="" style="display:none"/><span class="lb-emoji" id="lb-emoji" style="display:none"></span></div>
 <div class="nav">
   <button class="btn-cart-ico" onclick="window.location.href='carrinho.html'"><i class="fa-solid fa-cart-shopping"></i><span class="badge-n" id="badge-n">0</span></button>
   <button class="btn-add-nav" id="btn-add" onclick="addCart()">Adicionar ao Carrinho</button>
 </div>
 <div class="toast" id="toast"></div>
-<script src="catalogo.js?v=9"></script>
+<script src="catalogo.js?v=10"></script>
 <script>
   let _p=null,_qty=1;
   document.addEventListener('DOMContentLoaded',()=>{
@@ -182,7 +182,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
 
     // Construir hero
     const heroContainer=document.getElementById('hero-container');
-    const tagHtml=p.etiqueta?`<span class="prod-tag ${p.etiqueta}" id="prod-tag">${{promo:'PromoÃÂÃÂ§ÃÂÃÂ£o',novo:'Novo',destaque:'ÃÂ¢ÃÂ­ÃÂ Destaque',especial:'Especial'}[p.etiqueta]||''}</span>`:`<span></span>`;
+    const tagHtml=p.etiqueta?`<span class="prod-tag ${p.etiqueta}" id="prod-tag">${{promo:'PromoÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o',novo:'Novo',destaque:'ÃÂÃÂ¢ÃÂÃÂ­ÃÂÃÂ Destaque',especial:'Especial'}[p.etiqueta]||''}</span>`:`<span></span>`;
 
     if(_carouselImgs.length>1){
       // Carrossel
@@ -191,8 +191,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
       heroContainer.innerHTML=`
         <div class="carousel" id="carousel">
           <div class="carousel-track" id="carousel-track">${slides}</div>
-          <button class="carousel-btn prev" onclick="goSlide(_carouselIdx-1)">ÃÂ¢ÃÂÃÂ¹</button>
-          <button class="carousel-btn next" onclick="goSlide(_carouselIdx+1)">ÃÂ¢ÃÂÃÂº</button>
+          <button class="carousel-btn prev" onclick="goSlide(_carouselIdx-1)">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¹</button>
+          <button class="carousel-btn next" onclick="goSlide(_carouselIdx+1)">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº</button>
           <div class="carousel-dots">${dots}</div>
           <div class="tag-strip">${tagHtml}<button class="btn-zoom" onclick="abrirLightbox()"><i class='fa-solid fa-magnifying-glass'></i> Ampliar</button></div>
         </div>`;
@@ -205,7 +205,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
           <div class="tag-strip">${tagHtml}<button class="btn-zoom" onclick="abrirLightbox()"><i class='fa-solid fa-magnifying-glass'></i> Ampliar</button></div>
         </div>`;
     } else {
-      // SÃÂÃÂ³ emoji
+      // SÃÂÃÂÃÂÃÂ³ emoji
       heroContainer.innerHTML=`
         <div class="prod-hero" id="prod-hero">
           <span class="prod-emoji-big">${p.emoji}</span>
@@ -214,10 +214,10 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     }
 
     const pEl=document.getElementById('pd-preco');
-    if(p.preco>0){pEl.textContent=kz(p.preco);pEl.className='pd-preco';}else{pEl.textContent='OrÃÂÃÂ§amento personalizado';pEl.className='pd-preco orcamento';}
+    if(p.preco>0){pEl.textContent=kz(p.preco);pEl.className='pd-preco';}else{pEl.textContent='OrÃÂÃÂÃÂÃÂ§amento personalizado';pEl.className='pd-preco orcamento';}
     if(p.preco_orig>0){document.getElementById('pd-orig').textContent=kz(p.preco_orig);document.getElementById('pd-pct').textContent=`-${Math.round((1-p.preco/p.preco_orig)*100)}%`;document.getElementById('pd-orig-row').style.display='flex';}
     document.getElementById('pd-desc').textContent=p.descricao||'';
-    document.getElementById('pd-dests').innerHTML=(p.destaques||[]).map(d=>`<span class="pd-dest-it">ÃÂ¢ÃÂÃÂ ${d}</span>`).join('');
+    document.getElementById('pd-dests').innerHTML=(p.destaques||[]).map(d=>`<span class="pd-dest-it">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ ${d}</span>`).join('');
     if(p.preco===0){document.getElementById('sec-qty').style.display='none';}
     if(p.specs&&Object.keys(p.specs).length){document.getElementById('sec-specs').style.display='block';document.getElementById('specs-card').innerHTML=Object.entries(p.specs).map(([k,v])=>`<div class="spec-row"><span class="spec-k">${k}</span><span class="spec-v">${v}</span></div>`).join('');}
     const rels=getProdutos().filter(x=>x.categoria===p.categoria&&x.id!==p.id).slice(0,6);
@@ -245,7 +245,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     el.addEventListener('touchmove',e=>{
       const dx=Math.abs(e.touches[0].clientX-sx);
       const dy=Math.abs(e.touches[0].clientY-sy);
-      // SÃÂÃÂ³ bloquear scroll se movimento ÃÂÃÂ© maioritariamente horizontal
+      // SÃÂÃÂÃÂÃÂ³ bloquear scroll se movimento ÃÂÃÂÃÂÃÂ© maioritariamente horizontal
       if(dx>dy&&dx>8){moving=true;e.preventDefault();}
     },{passive:false});
     el.addEventListener('touchend',e=>{
@@ -256,21 +256,21 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     },{passive:true});
   }
   function qty(d){_qty=Math.max(1,Math.min(99,_qty+d));document.getElementById('qty-val').textContent=_qty;actuBtnAdd();}
-  function actuBtnAdd(){if(_p.preco>0)document.getElementById('btn-add').textContent=`Adicionar ÃÂ¢ÃÂÃÂ ${kz(_p.preco*_qty)}`;}
+  function actuBtnAdd(){if(_p.preco>0)document.getElementById('btn-add').textContent=`Adicionar ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ ${kz(_p.preco*_qty)}`;}
   function addCart(){
     if(!_p)return;
     const nota=document.getElementById('nota-input').value.trim();
     if(_p.preco===0){
-      const l=getLoja();let m=`ÃÂ°ÃÂÃÂÃÂ *PEDIDO DE ORÃÂÃÂAMENTO ÃÂ¢ÃÂÃÂ ${l.nome}*\n\n*Produto:* ${_p.nome}`;
+      const l=getLoja();let m=`ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ *PEDIDO DE ORÃÂÃÂÃÂÃÂAMENTO ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ ${l.nome}*\n\n*Produto:* ${_p.nome}`;
       if(nota)m+=`\n*Detalhes:* ${nota}`;
       window.open(`https://wa.me/${l.whatsapp.replace(/\D/g,'')}?text=${encodeURIComponent(m)}`,'_blank');return;
     }
     const c=getCarrinho();c.push({chave:`${_p.id}-${Date.now()}`,produto_id:_p.id,nome:_p.nome,preco:_p.preco,quantidade:_qty,imagem:_p.imagem||'',emoji:_p.emoji,nota});
-    salvarCarrinho(c);actuBadge();toast(`ÃÂ¢ÃÂÃÂ ${_p.nome} adicionado!`,'ok');
-    // Transformar botÃÂÃÂ£o em CTA para o carrinho durante 4s
+    salvarCarrinho(c);actuBadge();toast(`ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ ${_p.nome} adicionado!`,'ok');
+    // Transformar botÃÂÃÂÃÂÃÂ£o em CTA para o carrinho durante 4s
     const btnAdd=document.getElementById('btn-add');
     const txtOriginal=btnAdd.textContent;
-    btnAdd.textContent='ÃÂ°ÃÂÃÂÃÂ Ver Carrinho ÃÂ¢ÃÂÃÂ';
+    btnAdd.textContent='ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Ver Carrinho ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ';
     btnAdd.style.background='linear-gradient(135deg,#06d6a0,#04b385)';
     btnAdd.onclick=()=>window.location.href='carrinho.html';
     clearTimeout(window._btnAddTimer);
@@ -298,7 +298,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     if(!_p) return;
     const adicionado=toggleWishlist(_p.id);
     actuWishlist();
-    toast(adicionado?'ÃÂ¢ÃÂÃÂ¤ÃÂ¯ÃÂ¸ÃÂ Adicionado ÃÂÃÂ  wishlist':'ÃÂ°ÃÂÃÂ¤ÃÂ Removido da wishlist','ok');
+    toast(adicionado?'ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¤ÃÂÃÂ¯ÃÂÃÂ¸ÃÂÃÂ Adicionado ÃÂÃÂÃÂÃÂ  wishlist':'ÃÂÃÂ°ÃÂÃÂÃÂÃÂ¤ÃÂÃÂ Removido da wishlist','ok');
   }
   function toast(msg,tipo){clearTimeout(window._toastTimer);const t=document.getElementById('toast');if(!t)return;t.textContent=msg;t.className='toast show '+(tipo||'ok');window._toastTimer=window.setTimeout(function(){const e=document.getElementById('toast');if(e)e.classList.remove('show');},3200);}
 </script>
