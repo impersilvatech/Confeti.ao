@@ -24,7 +24,7 @@
         if(els.length){els.forEach(function(el){el.textContent=n;});}
       });
       obs.observe(document.documentElement,{childList:true,subtree:true});
-      // Parar observer apÃÂÃÂÃÂÃÂ³s carregar
+      // Parar observer apÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³s carregar
       document.addEventListener('DOMContentLoaded',function(){obs.disconnect();});
     }
   }catch(_){}
@@ -96,10 +96,10 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
 <div id="cart-content"></div>
 <div class="nav" id="nav-b" style="display:none">
   <button class="btn-bk-nav" onclick="window.location.href='catalogo.html'"><i class="fa-solid fa-arrow-left"></i></button>
-  <button class="btn-conf" onclick="confirmar()">Confirmar Encomenda ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ</button>
+  <button class="btn-conf" onclick="confirmar()">Confirmar Encomenda ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ</button>
 </div>
 <div class="toast" id="toast"></div>
-<script src="catalogo.js?v=10"></script>
+<script src="catalogo.js?v=11"></script>
 <script>
   let _car;
   document.addEventListener('DOMContentLoaded',()=>{
@@ -110,13 +110,13 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     const el=document.getElementById('cart-content'),nav=document.getElementById('nav-b');
     if(!_car.length){
       nav.style.display='none';document.getElementById('pg-sub').textContent='';
-      el.innerHTML=`<div class="empty"><div class="ce-ico"><i class="fa-solid fa-cart-shopping"></i></div><h2>Carrinho vazio</h2><p>Adicione produtos ao carrinho para continuar</p><button class="btn-cat" onclick="window.location.href='catalogo.html'">Ver CatÃÂÃÂÃÂÃÂ¡logo ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ</button></div>`;
+      el.innerHTML=`<div class="empty"><div class="ce-ico"><i class="fa-solid fa-cart-shopping"></i></div><h2>Carrinho vazio</h2><p>Adicione produtos ao carrinho para continuar</p><button class="btn-cat" onclick="window.location.href='catalogo.html'">Ver CatÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¡logo ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ</button></div>`;
       document.querySelector('.empty').style.display='block';return;
     }
     nav.style.display='flex';
     const total=_car.reduce((s,i)=>s+i.preco*i.quantidade,0);
     const qtd=_car.reduce((s,i)=>s+i.quantidade,0);
-    document.getElementById('pg-sub').textContent=`${qtd} produto${qtd!==1?'s':''} ÃÂÃÂÃÂÃÂ· ${kz(total)}`;
+    document.getElementById('pg-sub').textContent=`${qtd} produto${qtd!==1?'s':''} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· ${kz(total)}`;
     let html=`<div class="items">`;
     _car.forEach((item,idx)=>{
       const imgH=item.imagem?`<img src="${item.imagem}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">`:item.emoji;
@@ -125,18 +125,18 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
         <div class="item-info">
           <div class="item-nome">${item.nome}</div>
           <div class="item-unit">${kz(item.preco)} / un.</div>
-          ${item.nota?`<div class="item-nota">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ ${item.nota}</div>`:''}
+          ${item.nota?`<div class="item-nota">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ ${item.nota}</div>`:''}
         </div>
         <div class="item-right">
           <div class="item-sub">${kz(item.preco*item.quantidade)}</div>
           <button class="btn-del" onclick="rem(${idx})"><i class="fa-solid fa-trash"></i> Remover</button>
-          <div class="qty-row"><button class="qb" onclick="adj(${idx},-1)">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ</button><span class="qn">${item.quantidade}</span><button class="qb" onclick="adj(${idx},1)">+</button></div>
+          <div class="qty-row"><button class="qb" onclick="adj(${idx},-1)">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ</button><span class="qn">${item.quantidade}</span><button class="qb" onclick="adj(${idx},1)">+</button></div>
         </div>
       </div>`;
     });
     html+=`</div>`;
     const nota=localStorage.getItem('cf_nota')||'';
-    html+=`<div class="nota-box"><label class="nota-lbl">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Nota geral da encomenda</label><textarea class="nota-ta" id="nota-ta" placeholder="Data do evento, tema geral, observaÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂµes..." oninput="localStorage.setItem('cf_nota',this.value)">${nota}</textarea></div>`;
+    html+=`<div class="nota-box"><label class="nota-lbl">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Nota geral da encomenda</label><textarea class="nota-ta" id="nota-ta" placeholder="Data do evento, tema geral, observaÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµes..." oninput="localStorage.setItem('cf_nota',this.value)">${nota}</textarea></div>`;
     html+=`<div class="resumo"><div class="rrow"><span class="rl">Produtos (${qtd})</span><span class="rv">${kz(total)}</span></div><div class="rrow"><span class="rl">Entrega</span><span class="rv" style="color:var(--teal)">A combinar</span></div><div class="rtotal"><span class="rtl">Total</span><span class="rtv">${kz(total)}</span></div></div>`;
     el.innerHTML=html;
   }
