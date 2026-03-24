@@ -1,4 +1,4 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 24/03/2026, 19:09:05
+// CONFETI — catalogo.js v2.0 — Gerado em: 24/03/2026, 19:18:04
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
@@ -42,7 +42,7 @@ const LOJA_DEFAULT = {
   "secCtaActiva": true,
   "campoDataActivo": true,
   "campoLocalActivo": true,
-  "cf_versao": 8
+  "cf_versao": 9
 };
 const DEPOIMENTOS_DEFAULT = [
   {

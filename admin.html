@@ -614,6 +614,14 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
 <div class="toast" id="toast"></div>
 <script src="catalogo.js"></script>
 <script>
+// ── Fallback: funções de autenticação embutidas caso catalogo.js não carregue ──
+// (se catalogo.js já as definiu, estas são ignoradas)
+if(typeof cfHash==='undefined'){
+  function cfHash(s){let h=5381;for(let i=0;i<s.length;i++){h=((h<<5)+h)^s.charCodeAt(i);h|=0;}return(h>>>0).toString(16);}
+  function getAdminHash(){var local=localStorage.getItem('cf_admin_hash');if(local)return local;if(typeof _ADMIN_PIN_HASH!=='undefined'&&_ADMIN_PIN_HASH)return _ADMIN_PIN_HASH;return'7c5403c9';}
+  function checkPin(pin){return cfHash(String(pin))===getAdminHash();}
+  function savePin(pin){localStorage.setItem('cf_admin_hash',cfHash(String(pin)));}
+}
 // ── Estado global ──────────────────────────────────────────────────────────
 let _prods, _cats, _loja, _deps, _feats;
 let _editId=null, _editCatId=null, _editDepId=null, _editFeatId=null;
@@ -1122,15 +1130,15 @@ function fecharSh(ovId,shId){document.getElementById(ovId).classList.remove('on'
 // ── CONFIG EMBEBIDA (preenchida pela IMPERSILVA TECH antes de entregar) ────
 // Deixar string vazia ('') se não configurado
 const _SYNC_CFG_EMBED = {
-  usr:    '',
-  proj:   '',
+  usr:    'impersilvatech',
+  proj:   'Confeti.ao',
   branch: 'main',
   key:    ''
 };
 
 // Hash do PIN embebido — actualizado automaticamente ao publicar no site
 // Hash do PIN de acesso. Gerado automaticamente ao publicar.
-const _ADMIN_PIN_HASH = '7c5403c9';
+const _ADMIN_PIN_HASH='7c537b05';
 
 function _getSyncCfg(){
   // localStorage tem prioridade (configuração local sobrepõe a embebida)
@@ -1303,8 +1311,7 @@ async function publicarNoSite(){
     if(!r.ok) return null;
     const d=await r.json();
     // GitHub devolve conteúdo em base64
-    try{ return atob(d.content.replace(/
-/g,'')); }catch(_){ return null; }
+    try{ return atob(d.content.replace(/\n/g,'')); }catch(_){ return null; }
   };
 
   try{
