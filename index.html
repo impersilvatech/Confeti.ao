@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-AO" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>CONFETI — Doces para cada momento especial</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<script>(function(){var t=localStorage.getItem('cf_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})()</script>
+<script>(function(){
+  try{
+    var l=JSON.parse(localStorage.getItem('cf_loja')||'{}');
+    var n=l.nome;
+    if(n){
+      // Aplicar imediatamente quando o elemento existir
+      function _aplicarNome(){
+        document.querySelectorAll('[data-loja-nome]').forEach(function(el){el.textContent=n;});
+        var t=document.title;
+        if(t&&t.indexOf('CONFETI')>=0)document.title=t.replace('CONFETI',n);
+      }
+      // Tentar imediatamente + no DOMContentLoaded como fallback
+      document.addEventListener('DOMContentLoaded',_aplicarNome);
+      // MutationObserver para apanhar elementos criados dinamicamente
+      var obs=new MutationObserver(function(){
+        var els=document.querySelectorAll('[data-loja-nome]');
+        if(els.length){els.forEach(function(el){el.textContent=n;});}
+      });
+      obs.observe(document.documentElement,{childList:true,subtree:true});
+      // Parar observer após carregar
+      document.addEventListener('DOMContentLoaded',function(){obs.disconnect();});
+    }
+  }catch(_){}
+})()</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0d0d1a;--bg2:#14142b;--card:#1a1a32;--border:#2a2a4a;
+  --pink:#ff6b9d;--purple:#b14ae8;--teal:#06d6a0;--yellow:#ffd166;--coral:#ff9f43;
+  --white:#fff;--muted:#9898bb;--muted2:#4a4a6a;
+  --ft:'Fredoka One',cursive;--fb:'Nunito',sans-serif;
+  --r:16px;--tr:all .3s cubic-bezier(.4,0,.2,1);
+  --grad:linear-gradient(135deg,#ff6b9d,#b14ae8)
+}
+[data-theme="light"]{--bg:#fff5f8;--bg2:#fff;--card:#fff;--border:#f0d6e8;--white:#1a0a2e;--muted:#7a5a8a;--muted2:#ccc}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--white);overflow-x:hidden;transition:background .35s,color .35s}
+
+/* ── TOPBAR ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:200;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;background:rgba(13,13,26,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:background .35s}
+[data-theme="light"] .topbar{background:rgba(255,245,248,.92)}
+.tb-logo{font-family:var(--ft);font-size:1.3rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:1px;cursor:pointer}
+.tb-btns{display:flex;gap:6px;align-items:center}
+.tb-icon{width:32px;height:32px;border-radius:50%;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.85rem;cursor:pointer;transition:var(--tr)}
+.tb-icon:hover{border-color:var(--pink)}
+
+/* ── BANNER ── */
+.banner{background:var(--grad);color:#fff;text-align:center;font-family:var(--ft);font-size:.72rem;padding:7px 14px;letter-spacing:.5px;position:relative;z-index:199;margin-top:53px;display:none}
+.banner.on{display:block}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.25;animation:float 8s ease-in-out infinite}
+.orb1{width:350px;height:350px;background:var(--pink);top:-80px;left:-80px}
+.orb2{width:280px;height:280px;background:var(--purple);bottom:-60px;right:-60px;animation-delay:-3s}
+.orb3{width:200px;height:200px;background:var(--teal);top:40%;left:60%;animation-delay:-5s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-20px) scale(1.05)}}
+[data-theme="light"] .orb{opacity:.12}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,107,157,.12);border:1px solid rgba(255,107,157,.3);border-radius:50px;padding:5px 14px;font-size:.66rem;font-weight:700;color:var(--pink);margin-bottom:16px;animation:fadeUp .6s .1s both}
+.hero-title{font-family:var(--ft);font-size:clamp(2.6rem,13vw,4.5rem);line-height:1.05;color:var(--white);margin-bottom:10px;animation:fadeUp .6s .2s both;white-space:pre-line}
+.hero-title .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(.82rem,3.5vw,1rem);color:var(--muted);max-width:340px;line-height:1.65;margin:0 auto 24px;animation:fadeUp .6s .3s both}
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;animation:fadeUp .6s .4s both;margin-bottom:32px}
+.btn-hero-main{padding:13px 28px;background:var(--grad);border:none;border-radius:50px;font-family:var(--ft);font-size:.9rem;color:#fff;cursor:pointer;box-shadow:0 8px 24px rgba(255,107,157,.4);transition:var(--tr)}
+.btn-hero-main:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(255,107,157,.5)}
+.btn-hero-sec{padding:12px 24px;background:none;border:2px solid var(--border);border-radius:50px;font-family:var(--ft);font-size:.88rem;color:var(--white);cursor:pointer;transition:var(--tr)}
+.btn-hero-sec:hover{border-color:var(--pink);color:var(--pink)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* ── STATS ── */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.stat{background:var(--card);padding:16px 10px;text-align:center;transition:background .35s}
+.stat-n{font-family:var(--ft);font-size:1.6rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-l{font-size:.56rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-top:2px}
+
+/* ── SECTION ── */
+.sec{padding:48px 16px}
+.sec-hdr{text-align:center;margin-bottom:28px}
+.sec-badge{display:inline-block;padding:3px 12px;border-radius:50px;font-size:.58rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.sec-badge.pink{background:rgba(255,107,157,.12);color:var(--pink);border:1px solid rgba(255,107,157,.2)}
+.sec-badge.purple{background:rgba(177,74,232,.12);color:var(--purple);border:1px solid rgba(177,74,232,.2)}
+.sec-badge.teal{background:rgba(6,214,160,.12);color:var(--teal);border:1px solid rgba(6,214,160,.2)}
+.sec-badge.yellow{background:rgba(255,209,102,.12);color:var(--yellow);border:1px solid rgba(255,209,102,.2)}
+.sec-title{font-family:var(--ft);font-size:clamp(1.4rem,6vw,2rem);color:var(--white);line-height:1.1}
+.sec-sub{font-size:.8rem;color:var(--muted);margin-top:6px;line-height:1.6}
+
+/* ── CATEGORIAS ── */
+.cats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.cat-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px 14px;cursor:pointer;transition:var(--tr);text-align:center;overflow:hidden}
+.cat-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.cat-emoji{font-size:2.4rem;margin-bottom:8px;display:block}
+.cat-nome{font-family:var(--ft);font-size:.88rem;color:var(--white);margin-bottom:4px}
+.cat-qt{font-size:.62rem;color:var(--muted)}
+.cat-arr{font-size:.8rem;color:var(--muted);margin-top:6px}
+
+/* ── COMO FUNCIONA ── */
+.steps-flow{display:flex;flex-direction:column}
+.step-fl{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px dashed var(--border)}
+.step-fl:last-child{border-bottom:none}
+.step-num{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ft);font-size:1rem;flex-shrink:0;color:#fff}
+.step-num.s1{background:var(--pink);box-shadow:0 4px 14px rgba(255,107,157,.35)}
+.step-num.s2{background:var(--purple);box-shadow:0 4px 14px rgba(177,74,232,.35)}
+.step-num.s3{background:var(--teal);box-shadow:0 4px 14px rgba(6,214,160,.35)}
+.step-num.s4{background:var(--yellow);box-shadow:0 4px 14px rgba(255,209,102,.35);color:#333}
+.step-fl-info h4{font-family:var(--ft);font-size:.9rem;color:var(--white);margin-bottom:3px}
+.step-fl-info p{font-size:.76rem;color:var(--muted);line-height:1.5}
+
+/* ── FEATURES (Porquê Nós) ── */
+.features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.feat-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 14px;transition:var(--tr)}
+.feat-card:hover{border-color:rgba(255,107,157,.3);transform:translateY(-2px)}
+.feat-ico{font-size:1.8rem;margin-bottom:8px;display:block}
+.feat-titulo{font-family:var(--ft);font-size:.82rem;color:var(--white);margin-bottom:4px}
+.feat-desc{font-size:.7rem;color:var(--muted);line-height:1.5}
+
+/* ── EVENTOS ── */
+.eventos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.ev-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 12px;text-align:center;transition:var(--tr);cursor:pointer}
+.ev-card:hover{border-color:rgba(255,107,157,.35);transform:translateY(-2px)}
+.ev-ico{font-size:2rem;margin-bottom:6px;display:block}
+.ev-nome{font-family:var(--ft);font-size:.8rem;color:var(--white)}
+.ev-sub{font-size:.62rem;color:var(--muted);margin-top:2px}
+
+/* ── DEPOIMENTOS ── */
+.dep-list{display:flex;flex-direction:column;gap:10px}
+.dep-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;position:relative;overflow:hidden}
+.dep-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--grad)}
+.dep-stars{color:var(--yellow);font-size:.8rem;margin-bottom:8px}
+.dep-txt{font-size:.8rem;color:var(--muted);line-height:1.6;font-style:italic;margin-bottom:10px}
+.dep-autor{display:flex;align-items:center;gap:8px}
+.dep-av{width:34px;height:34px;border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;border:1px solid var(--border)}
+.dep-nome{font-family:var(--ft);font-size:.76rem;color:var(--white)}
+.dep-ev{font-size:.6rem;color:var(--muted)}
+
+/* ── CTA ── */
+.cta-sec{padding:48px 16px;text-align:center;position:relative;overflow:hidden}
+.cta-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,107,157,.1),rgba(177,74,232,.08));pointer-events:none}
+.cta-emoji{font-size:3.5rem;margin-bottom:12px;display:block;animation:bounce 2s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.cta-title{font-family:var(--ft);font-size:clamp(1.5rem,7vw,2.2rem);color:var(--white);margin-bottom:8px;line-height:1.1}
+.cta-sub{font-size:.82rem;color:var(--muted);margin-bottom:24px;line-height:1.6}
+.btn-cta{padding:14px 36px;background:var(--grad);border:none;border-radius:50px;font-family:var(--ft);font-size:.95rem;color:#fff;cursor:pointer;box-shadow:0 8px 24px rgba(255,107,157,.4);transition:var(--tr);display:inline-block}
+.btn-cta:hover{transform:translateY(-2px)}
+
+/* ── FOOTER ── */
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px 16px;text-align:center;transition:background .35s}
+.footer-logo{font-family:var(--ft);font-size:1.4rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
+.footer-tag{font-size:.72rem;color:var(--muted);margin-bottom:14px}
+.footer-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+.footer-link{font-size:.7rem;color:var(--muted);cursor:pointer;transition:color .2s}
+.footer-link:hover{color:var(--pink)}
+.footer-copy{font-size:.62rem;color:var(--muted2)}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<nav class="topbar">
+  <div class="tb-logo" id="tb-logo" data-loja-nome onclick="window.scrollTo({top:0,behavior:'smooth'})">CONFETI</div>
+  <div class="tb-btns">
+    <button class="tb-icon" onclick="toggleTheme()"><i data-theme-ico class="fa-solid fa-sun"></i></button>
+  </div>
+</nav>
+
+<!-- BANNER DE DESTAQUE (editável no admin) -->
+<div class="banner" id="banner"></div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+  <div style="position:relative;z-index:1;width:100%">
+    <div class="hero-badge" id="hero-badge">🎊 Confeitaria Artesanal · Luanda</div>
+    <h1 class="hero-title" id="hero-title">Doces que fazem<br><span class="grad">a festa!</span></h1>
+    <p class="hero-sub" id="hero-sub"></p>
+    <div class="hero-btns">
+      <button class="btn-hero-main" onclick="irDados('')">Fazer Encomenda 🎂</button>
+      <button class="btn-hero-sec" onclick="document.getElementById('como-funciona').scrollIntoView({behavior:'smooth'})">Como funciona ✨</button>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats" id="sec-stats">
+  <div class="stat"><div class="stat-n" id="st-anos">5+</div><div class="stat-l">Anos</div></div>
+  <div class="stat"><div class="stat-n" id="st-cli">500+</div><div class="stat-l">Clientes</div></div>
+  <div class="stat"><div class="stat-n" id="st-ev">200+</div><div class="stat-l">Eventos</div></div>
+</div>
+
+<!-- CATEGORIAS -->
+<section class="sec" id="categorias">
+  <div class="sec-hdr">
+    <div class="sec-badge pink" id="cats-badge">🍰 O que fazemos</div>
+    <h2 class="sec-title" id="cats-titulo">Tudo para o<br>seu evento</h2>
+    <p class="sec-sub" id="cats-sub">Cada produto feito com amor, qualidade e atenção ao detalhe</p>
+  </div>
+  <div class="cats-grid" id="cats-grid"></div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="sec" id="como-funciona" style="background:var(--bg2);transition:background .35s">
+  <div class="sec-hdr">
+    <div class="sec-badge purple">✨ Simples assim</div>
+    <h2 class="sec-title">Como fazer<br>a sua encomenda</h2>
+  </div>
+  <div class="steps-flow">
+    <div class="step-fl"><div class="step-num s1">1</div><div class="step-fl-info"><h4>Escolha os seus produtos</h4><p>Navegue pelo catálogo e seleccione tudo o que precisa — bolos, salgados, kits ou mesas de doces.</p></div></div>
+    <div class="step-fl"><div class="step-num s2">2</div><div class="step-fl-info"><h4>Personalize a encomenda</h4><p>Indique o tema, quantidades, data do evento e todos os detalhes que tornam a sua celebração única.</p></div></div>
+    <div class="step-fl"><div class="step-num s3">3</div><div class="step-fl-info"><h4>Confirme pelo WhatsApp</h4><p>O pedido vai directamente para a nossa equipa. Confirmamos tudo e combinamos os últimos detalhes.</p></div></div>
+    <div class="step-fl"><div class="step-num s4">4</div><div class="step-fl-info"><h4>Receba na data combinada</h4><p>Entregamos no local do evento ou pode levantar na nossa loja. Pontualidade garantida!</p></div></div>
+  </div>
+</section>
+
+<!-- PORQUÊ NÓS (Features dinâmicas) -->
+<section class="sec" id="sec-features">
+  <div class="sec-hdr">
+    <div class="sec-badge teal">💎 Porquê nós</div>
+    <h2 class="sec-title">Feito com<br>paixão</h2>
+  </div>
+  <div class="features-grid" id="features-grid"></div>
+</section>
+
+<!-- EVENTOS -->
+<section class="sec" id="sec-eventos" style="background:var(--bg2);transition:background .35s">
+  <div class="sec-hdr">
+    <div class="sec-badge pink">🎉 Ocasiões especiais</div>
+    <h2 class="sec-title">Para cada<br>momento</h2>
+  </div>
+  <div class="eventos-grid" id="eventos-grid"></div>
+</section>
+
+<!-- DEPOIMENTOS (dinâmicos) -->
+<section class="sec" id="sec-depoimentos">
+  <div class="sec-hdr">
+    <div class="sec-badge yellow">⭐ O que dizem</div>
+    <h2 class="sec-title">Clientes<br>satisfeitos</h2>
+  </div>
+  <div class="dep-list" id="dep-list"></div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec" id="sec-cta">
+  <div class="cta-bg"></div>
+  <div style="position:relative;z-index:1">
+    <span class="cta-emoji" id="cta-emoji">🎊</span>
+    <h2 class="cta-title" id="cta-titulo">Tem um evento<br>a caminho?</h2>
+    <p class="cta-sub" id="cta-sub">Não deixe para a última hora!<br>Faça já a sua encomenda e garanta o melhor para o seu evento.</p>
+    <button class="btn-cta" id="cta-btn" onclick="irDados('')">Fazer Encomenda Agora →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo" id="ft-logo" data-loja-nome>CONFETI</div>
+  <div class="footer-tag" id="ft-tag">Doces para cada momento especial</div>
+  <div class="footer-links">
+    <span class="footer-link" onclick="irDados('')">Catálogo</span>
+    <span class="footer-link" onclick="irDados('')">Encomendar</span>
+    <span class="footer-link" onclick="abrirWpp()">WhatsApp</span>
+    <span class="footer-link" id="ft-ig" style="display:none" onclick="abrirIG()">Instagram</span>
+    <span class="footer-link" id="ft-fb" style="display:none" onclick="abrirFB()">Facebook</span>
+    <span class="footer-link" id="ft-tt" style="display:none" onclick="abrirTT()">TikTok</span>
+    <span class="footer-link" onclick="window.location.href='admin.html'">Admin</span>
+  </div>
+  <div class="footer-copy" id="ft-copy">© 2024 CONFETI · Todos os direitos reservados</div>
+</footer>
+
+<script src="catalogo.js?v=1"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initTheme(); _syncThemeIcons(); applyThemeColors();
+    const l = getLoja();
+
+    // Topbar & footer
+    document.getElementById('tb-logo').textContent = l.nome;
+    document.getElementById('ft-logo').textContent = l.nome;
+    document.getElementById('ft-tag').textContent = l.tagline;
+    document.title = l.nome + ' — ' + l.tagline;
+    document.getElementById('ft-copy').textContent = `© ${new Date().getFullYear()} ${l.nome} · Todos os direitos reservados`;
+
+    // Hero
+    document.getElementById('hero-badge').textContent = l.badge || '🎊 Confeitaria Artesanal · Luanda';
+    const titulo = (l.heroTitulo || 'Doces que fazem\na festa!').split('\n');
+    document.getElementById('hero-title').innerHTML = titulo.map((t,i) => i===titulo.length-1 ? `<span class="grad">${t}</span>` : t).join('<br>');
+    document.getElementById('hero-sub').textContent = l.slogan;
+
+    // Stats
+    document.getElementById('st-anos').textContent = (l.anos || '5') + '+';
+    document.getElementById('st-cli').textContent = l.clientesSatisfeitos || '500+';
+    document.getElementById('st-ev').textContent = l.eventosRealizados || '200+';
+
+    // Cabeçalho categorias
+    document.getElementById('cats-badge').textContent = l.catsBadge || '🍰 O que fazemos';
+    const ctit = (l.catsTitulo || 'Tudo para o\nseu evento').split('\n');
+    document.getElementById('cats-titulo').innerHTML = ctit.join('<br>');
+    document.getElementById('cats-sub').textContent = l.catsSub || 'Cada produto feito com amor, qualidade e atenção ao detalhe';
+
+    // CTA
+    document.getElementById('cta-emoji').textContent = l.ctaEmoji || '🎊';
+    const ctaTit = (l.ctaTitulo || 'Tem um evento\na caminho?').split('\n');
+    document.getElementById('cta-titulo').innerHTML = ctaTit.join('<br>');
+    const ctaSub = (l.ctaSub || 'Não deixe para a última hora!\nFaça já a sua encomenda e garanta o melhor para o seu evento.').split('\n');
+    document.getElementById('cta-sub').innerHTML = ctaSub.join('<br>');
+    document.getElementById('cta-btn').textContent = l.ctaBotao || 'Fazer Encomenda Agora →';
+
+    // Toggles de visibilidade de secções
+    const _hide = (id) => { const el=document.getElementById(id); if(el) el.style.display='none'; };
+    if (l.secStatsActiva === false)         _hide('sec-stats');
+    if (l.secComoFuncionaActiva === false)  _hide('como-funciona');
+    if (l.secFeaturesActiva === false)      _hide('sec-features');
+    if (l.secEventosActiva === false)       _hide('sec-eventos');
+    if (l.secDepoimentosActiva === false)   _hide('sec-depoimentos');
+    if (l.secCtaActiva === false)           _hide('sec-cta');
+
+    // Banner
+    if (l.bannerActivo && l.bannerDestaque) {
+      const b = document.getElementById('banner');
+      b.textContent = l.bannerDestaque;
+      b.classList.add('on');
+      document.querySelector('.hero').style.paddingTop = '70px';
+    }
+
+    // Redes sociais no footer
+    if (l.instagram) { const el=document.getElementById('ft-ig'); if(el) el.style.display='inline'; }
+    if (l.facebook)  { const el=document.getElementById('ft-fb'); if(el) el.style.display='inline'; }
+    if (l.tiktok)    { const el=document.getElementById('ft-tt'); if(el) el.style.display='inline'; }
+
+    buildCats();
+    buildEventos();
+    buildFeatures();
+    buildDepoimentos();
+  });
+
+  function buildEventos() {
+    const evs = getEventos();
+    document.getElementById('eventos-grid').innerHTML = evs.map(e => `
+      <div class="ev-card" onclick="irDados('${e.cat||''}')">
+        <span class="ev-ico">${e.emoji}</span>
+        <div class="ev-nome">${e.nome}</div>
+        <div class="ev-sub">${e.sub}</div>
+      </div>`).join('');
+  }
+
+  function buildCats() {
+    const cats = getCategorias(), prods = getProdutos();
+    document.getElementById('cats-grid').innerHTML = cats.map(c => {
+      const qt = prods.filter(p => p.categoria === c.id && p.disponivel !== false).length;
+      return `<div class="cat-card" style="border-color:${c.cor}22" onclick="irCatalogo('${c.id}')" onmouseover="this.style.borderColor='${c.cor}66'" onmouseout="this.style.borderColor='${c.cor}22'">
+        <span class="cat-emoji">${c.emoji}</span>
+        <div class="cat-nome">${c.label}</div>
+        <div class="cat-qt">${qt} produto${qt !== 1 ? 's' : ''}</div>
+        <div class="cat-arr">→</div>
+      </div>`;
+    }).join('');
+  }
+
+  function buildFeatures() {
+    const feats = getFeatures();
+    if (!feats.length) { document.getElementById('sec-features').style.display = 'none'; return; }
+    document.getElementById('features-grid').innerHTML = feats.map(f => `
+      <div class="feat-card">
+        <span class="feat-ico">${f.emoji}</span>
+        <div class="feat-titulo">${f.titulo}</div>
+        <div class="feat-desc">${f.descricao}</div>
+      </div>`).join('');
+  }
+
+  function buildDepoimentos() {
+    const deps = getDepoimentos();
+    document.getElementById('dep-list').innerHTML = deps.map(d => `
+      <div class="dep-card">
+        <div class="dep-stars">${'⭐'.repeat(d.stars||5)}</div>
+        <p class="dep-txt">"${d.texto}"</p>
+        <div class="dep-autor">
+          <div class="dep-av">${d.avatar||'😊'}</div>
+          <div><div class="dep-nome">${d.nome}</div><div class="dep-ev">${d.evento}</div></div>
+        </div>
+      </div>`).join('');
+  }
+
+  function irDados(cat) {
+    if (cat) sessionStorage.setItem('cf_cat_ini', cat);
+    window.location.href = localStorage.getItem('cf_cliente') ? 'catalogo.html' : 'dados.html';
+  }
+  function irCatalogo(cat) { irDados(cat); }
+  function abrirWpp()  { const l = getLoja(); window.open('https://wa.me/' + l.whatsapp.replace(/\D/g,''), '_blank'); }
+  function abrirIG()   { const l = getLoja(); if(l.instagram) window.open('https://instagram.com/' + l.instagram.replace('@',''), '_blank'); }
+  function abrirFB()   { const l = getLoja(); if(l.facebook)  window.open(l.facebook.startsWith('http') ? l.facebook : 'https://facebook.com/' + l.facebook, '_blank'); }
+  function abrirTT()   { const l = getLoja(); if(l.tiktok)    window.open(l.tiktok.startsWith('http')   ? l.tiktok   : 'https://tiktok.com/@' + l.tiktok.replace('@',''), '_blank'); }
+</script>
+</body>
+</html>
