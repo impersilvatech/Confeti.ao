@@ -1,13 +1,13 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 25/03/2026, 16:23:47
+// CONFETI — catalogo.js v2.0 — Gerado em: 25/03/2026, 16:48:52
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
-  "nome": "SILVA👤",
+  "nome": "CONFETI",
   "tagline": "Doces para cada momento especial",
   "slogan": "Criamos sabores que ficam na memória. Do casamento à festa de natal, cada detalhe conta.",
   "whatsapp": "244954288128",
   "logo": "",
-  "morada": "Huambo, Angola",
+  "morada": "Luanda, Angola",
   "instagram": "",
   "badge": "🎊 Confeitaria Artesanal · Luanda",
   "heroTitulo": "Doces que fazem\na festa!",
@@ -42,7 +42,7 @@ const LOJA_DEFAULT = {
   "secCtaActiva": true,
   "campoDataActivo": true,
   "campoLocalActivo": true,
-  "cf_versao": 15
+  "cf_versao": 1
 };
 const DEPOIMENTOS_DEFAULT = [
   {
@@ -213,15 +213,15 @@ const PRODUTOS_DEFAULT = [
   },
   {
     "id": 102,
+    "categoria": "bolos",
     "nome": "Bolo Temático Festa",
     "preco": 18000,
     "preco_orig": 22000,
-    "categoria": "bolos",
     "etiqueta": "promo",
     "emoji": "🎂",
-    "imagem": "imagens/bolo-tematico-festa-dz6j.webp",
-    "descricao": "Bolo temático personalizado para festas de aniversário, baptizados ou qualquer celebração.",
+    "imagem": "",
     "disponivel": true,
+    "descricao": "Bolo temático personalizado para festas de aniversário, baptizados ou qualquer celebração.",
     "specs": {
       "Tamanhos": "20, 25 ou 30 cm",
       "Sabores": "Chocolate / Baunilha / Morango / Coco",
@@ -232,25 +232,19 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Tema personalizado",
       "Fotos para referência aceites"
-    ],
-    "galeria": [
-      "imagens/bolo-tematico-festa-galeria-rxc9.webp",
-      "imagens/bolo-tematico-festa-galeria-iv3g.webp",
-      "imagens/bolo-tematico-festa-galeria-tyj9.webp",
-      "imagens/bolo-tematico-festa-galeria-yu5s.webp"
     ]
   },
   {
     "id": 103,
+    "categoria": "bolos",
     "nome": "Bolo de Baptizado",
     "preco": 22000,
     "preco_orig": 0,
-    "categoria": "bolos",
     "etiqueta": "novo",
     "emoji": "👶",
-    "imagem": "imagens/bolo-de-baptizado-o6li.webp",
-    "descricao": "Bolo delicado para baptizados, com decoração em tons suaves. Laços, flores e detalhes em fondant.",
+    "imagem": "",
     "disponivel": true,
+    "descricao": "Bolo delicado para baptizados, com decoração em tons suaves. Laços, flores e detalhes em fondant.",
     "specs": {
       "Tamanhos": "20 ou 25 cm",
       "Sabores": "Baunilha / Leite de Coco / Morango",
@@ -261,8 +255,7 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Paleta de cores personalizável",
       "Entrega incluída em Luanda"
-    ],
-    "galeria": []
+    ]
   },
   {
     "id": 104,
@@ -289,15 +282,15 @@ const PRODUTOS_DEFAULT = [
   },
   {
     "id": 105,
+    "categoria": "bolos",
     "nome": "Bolo de Natal Especial",
     "preco": 20000,
     "preco_orig": 0,
-    "categoria": "bolos",
     "etiqueta": "novo",
     "emoji": "🎄",
-    "imagem": "imagens/bolo-de-natal-especial-41nn.webp",
-    "descricao": "Bolo temático de Natal com decoração em vermelho, verde e dourado. Perfeito para a ceia.",
+    "imagem": "",
     "disponivel": true,
+    "descricao": "Bolo temático de Natal com decoração em vermelho, verde e dourado. Perfeito para a ceia.",
     "specs": {
       "Tamanhos": "25 ou 30 cm",
       "Sabores": "Chocolate com Nozes / Panetone / Baunilha",
@@ -308,20 +301,19 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Edição limitada de Natal",
       "Decoração personalizada"
-    ],
-    "galeria": []
+    ]
   },
   {
     "id": 201,
+    "categoria": "salgados",
     "nome": "Coxinhas (50 unidades)",
     "preco": 8500,
     "preco_orig": 10000,
-    "categoria": "salgados",
     "etiqueta": "promo",
     "emoji": "🍗",
-    "imagem": "imagens/coxinhas-50-unidades-leqz.webp",
-    "descricao": "Coxinhas de frango crocantes por fora, recheadas com frango desfiado temperado e requeijão.",
+    "imagem": "",
     "disponivel": true,
+    "descricao": "Coxinhas de frango crocantes por fora, recheadas com frango desfiado temperado e requeijão.",
     "specs": {
       "Quantidade": "50 unidades",
       "Recheio": "Frango com requeijão",
@@ -332,23 +324,19 @@ const PRODUTOS_DEFAULT = [
       "Massa crocante",
       "Recheio generoso",
       "Entrega quentes disponível"
-    ],
-    "galeria": [
-      "imagens/coxinhas-50-unidades-galeria-spsb.webp",
-      "imagens/coxinhas-50-unidades-galeria-mga1.webp"
     ]
   },
   {
     "id": 202,
+    "categoria": "salgados",
     "nome": "Rissóis (50 unidades)",
     "preco": 8000,
     "preco_orig": 0,
-    "categoria": "salgados",
     "etiqueta": "",
     "emoji": "🥟",
-    "imagem": "imagens/rissois-50-unidades-qqi3.webp",
-    "descricao": "Rissóis clássicos recheados com camarão ou carne. Massa macia, fritos na hora.",
+    "imagem": "",
     "disponivel": true,
+    "descricao": "Rissóis clássicos recheados com camarão ou carne. Massa macia, fritos na hora.",
     "specs": {
       "Quantidade": "50 unidades",
       "Recheio": "Camarão ou Carne (à escolha)",
@@ -358,8 +346,7 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Receita tradicional",
       "Recheio à escolha"
-    ],
-    "galeria": []
+    ]
   },
   {
     "id": 203,
@@ -384,15 +371,15 @@ const PRODUTOS_DEFAULT = [
   },
   {
     "id": 204,
+    "categoria": "salgados",
     "nome": "Mix de Salgados (100 un.)",
     "preco": 18000,
     "preco_orig": 24000,
-    "categoria": "salgados",
     "etiqueta": "promo",
     "emoji": "🎊",
-    "imagem": "imagens/mix-de-salgados-100-un-ymyu.webp",
-    "descricao": "Combinação perfeita: 35 coxinhas + 35 rissóis + 30 pastéis. Ideal para festas.",
+    "imagem": "",
     "disponivel": true,
+    "descricao": "Combinação perfeita: 35 coxinhas + 35 rissóis + 30 pastéis. Ideal para festas.",
     "specs": {
       "Quantidade": "100 unidades",
       "Composição": "35 Coxinhas + 35 Rissóis + 30 Pastéis",
@@ -402,20 +389,19 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Variedade garantida",
       "Melhor custo-benefício"
-    ],
-    "galeria": []
+    ]
   },
   {
     "id": 205,
+    "categoria": "salgados",
     "nome": "Mini Salgados Finos (80 un.)",
     "preco": 16000,
     "preco_orig": 0,
-    "categoria": "salgados",
     "etiqueta": "novo",
     "emoji": "✨",
-    "imagem": "imagens/mini-salgados-finos-80-un-qb2e.webp",
-    "descricao": "Salgados em formato mini para mesas de finger food. Apresentação elegante, ideais para eventos formais.",
+    "imagem": "",
     "disponivel": true,
+    "descricao": "Salgados em formato mini para mesas de finger food. Apresentação elegante, ideais para eventos formais.",
     "specs": {
       "Quantidade": "80 unidades",
       "Variedades": "Mini coxinhas + Bruschettas + Wraps",
@@ -425,20 +411,19 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Apresentação elegante",
       "Bandeja decorada incluída"
-    ],
-    "galeria": []
+    ]
   },
   {
     "id": 301,
+    "categoria": "kits",
     "nome": "Kit Natal Familiar",
     "preco": 35000,
     "preco_orig": 42000,
-    "categoria": "kits",
     "etiqueta": "promo",
     "emoji": "🎄",
-    "imagem": "imagens/kit-natal-familiar-0wa7.webp",
-    "descricao": "Kit completo para a ceia de Natal: bolo temático + 50 salgados + mesa de doces para 10 pessoas.",
+    "imagem": "",
     "disponivel": true,
+    "descricao": "Kit completo para a ceia de Natal: bolo temático + 50 salgados + mesa de doces para 10 pessoas.",
     "specs": {
       "Inclui": "Bolo Natal + 50 Salgados + Mesa Doces",
       "Para": "8 a 12 pessoas",
@@ -448,20 +433,19 @@ const PRODUTOS_DEFAULT = [
       "Tudo incluído",
       "Decoração natalícia",
       "Poupança de 7.000 Kz"
-    ],
-    "galeria": []
+    ]
   },
   {
     "id": 302,
+    "categoria": "kits",
     "nome": "Kit Ano Novo Celebração",
     "preco": 38000,
     "preco_orig": 46000,
-    "categoria": "kits",
     "etiqueta": "promo",
     "emoji": "🎆",
-    "imagem": "imagens/kit-ano-novo-celebracao-le2e.webp",
-    "descricao": "Bolo de passagem de ano + 60 salgados + doces finos + decoração dourada.",
+    "imagem": "",
     "disponivel": true,
+    "descricao": "Bolo de passagem de ano + 60 salgados + doces finos + decoração dourada.",
     "specs": {
       "Inclui": "Bolo + 60 Salgados + Doces Finos",
       "Para": "10 a 15 pessoas",
@@ -471,20 +455,19 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Decoração premium",
       "Confettis e balões incluídos"
-    ],
-    "galeria": []
+    ]
   },
   {
     "id": 303,
+    "categoria": "kits",
     "nome": "Kit Festa Infantil",
     "preco": 28000,
     "preco_orig": 34000,
-    "categoria": "kits",
     "etiqueta": "promo",
     "emoji": "🎠",
-    "imagem": "imagens/kit-festa-infantil-8bjp.webp",
-    "descricao": "Bolo temático + 40 salgados + mesa de doces colorida. Tema à escolha.",
+    "imagem": "",
     "disponivel": true,
+    "descricao": "Bolo temático + 40 salgados + mesa de doces colorida. Tema à escolha.",
     "specs": {
       "Inclui": "Bolo Temático + 40 Salgados + Mesa Doces",
       "Para": "15 a 25 crianças",
@@ -494,20 +477,19 @@ const PRODUTOS_DEFAULT = [
     "destaques": [
       "Tema totalmente personalizável",
       "Lembranças incluídas"
-    ],
-    "galeria": []
+    ]
   },
   {
     "id": 304,
+    "categoria": "kits",
     "nome": "Kit Casamento Completo",
     "preco": 120000,
     "preco_orig": 150000,
-    "categoria": "kits",
     "etiqueta": "destaque",
     "emoji": "💒",
-    "imagem": "imagens/kit-casamento-completo-d3nm.webp",
-    "descricao": "Pacote completo: bolo de casamento + 200 salgados + mesa de doces + candy bar. Consultoria incluída.",
+    "imagem": "",
     "disponivel": true,
+    "descricao": "Pacote completo: bolo de casamento + 200 salgados + mesa de doces + candy bar. Consultoria incluída.",
     "specs": {
       "Inclui": "Bolo + 200 Salgados + Mesa + Candy Bar",
       "Para": "50 a 100 convidados",
@@ -518,8 +500,7 @@ const PRODUTOS_DEFAULT = [
       "Consultoria personalizada",
       "Montagem no local",
       "Tudo coordenado"
-    ],
-    "galeria": []
+    ]
   },
   {
     "id": 401,
