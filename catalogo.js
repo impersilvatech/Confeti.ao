@@ -1,4 +1,4 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 25/03/2026, 17:23:07
+// CONFETI — catalogo.js v2.0 — Gerado em: 25/03/2026, 18:37:42
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
@@ -42,7 +42,7 @@ const LOJA_DEFAULT = {
   "secCtaActiva": true,
   "campoDataActivo": true,
   "campoLocalActivo": true,
-  "cf_versao": 16
+  "cf_versao": 17
 };
 const DEPOIMENTOS_DEFAULT = [
   {
@@ -189,15 +189,15 @@ const CATEGORIAS_DEFAULT = [
 const PRODUTOS_DEFAULT = [
   {
     "id": 101,
-    "categoria": "bolos",
     "nome": "Bolo de Casamento Clássico",
     "preco": 45000,
     "preco_orig": 0,
+    "categoria": "bolos",
     "etiqueta": "destaque",
     "emoji": "💍",
-    "imagem": "",
-    "disponivel": true,
+    "imagem": "imagens/bolo-de-natal-especial-41nn.webp",
     "descricao": "Bolo de casamento em andares com cobertura de fondant personalizada. Decoração floral à escolha.",
+    "disponivel": true,
     "specs": {
       "Andares": "2 a 5 (a combinar)",
       "Sabores": "Baunilha / Chocolate / Red Velvet / Limão",
@@ -209,6 +209,12 @@ const PRODUTOS_DEFAULT = [
       "Personalização total",
       "Entrega no local",
       "Suporte na montagem"
+    ],
+    "galeria": [
+      "imagens/bolo-de-casamento-classico-galer-cc16.webp",
+      "imagens/bolo-de-casamento-classico-galer-uxan.webp",
+      "imagens/bolo-de-casamento-classico-galer-03jv.webp",
+      "imagens/bolo-de-casamento-classico-galer-nzw4.webp"
     ]
   },
   {
