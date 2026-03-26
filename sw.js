@@ -1,5 +1,5 @@
-// Service Worker — CONFETI v4
-const CACHE_NAME='confeti-v4';
+// Service Worker — CONFETI v5
+const CACHE_NAME='confeti-v5';
 self.addEventListener('install',e=>{self.skipWaiting();});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',e=>{

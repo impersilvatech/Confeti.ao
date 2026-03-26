@@ -1,8 +1,8 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 26/03/2026, 09:14:13
+// CONFETI — catalogo.js v2.0 — Gerado em: 26/03/2026, 09:17:53
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
-  "nome": "EMÍLIO🦅",
+  "nome": "EMÍLIO",
   "tagline": "Doces para cada momento especial",
   "slogan": "Criamos sabores que ficam na memória. Do casamento à festa de natal, cada detalhe conta.",
   "whatsapp": "244954288128",
@@ -42,7 +42,7 @@ const LOJA_DEFAULT = {
   "secCtaActiva": true,
   "campoDataActivo": true,
   "campoLocalActivo": true,
-  "cf_versao": 4
+  "cf_versao": 5
 };
 const DEPOIMENTOS_DEFAULT = [
   {
@@ -210,7 +210,12 @@ const PRODUTOS_DEFAULT = [
       "Entrega no local",
       "Suporte na montagem"
     ],
-    "galeria": []
+    "galeria": [
+      "imagens/bolo-de-casamento-classico-galer-884c.webp",
+      "imagens/bolo-de-casamento-classico-galer-7na5.webp",
+      "imagens/bolo-de-casamento-classico-galer-ofvu.webp",
+      "imagens/bolo-de-casamento-classico-galer-t7dc.webp"
+    ]
   },
   {
     "id": 102,
