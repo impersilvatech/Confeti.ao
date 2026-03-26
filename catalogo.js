@@ -1,13 +1,13 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 26/03/2026, 00:11:10
+// CONFETI — catalogo.js v2.0 — Gerado em: 26/03/2026, 09:10:35
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
-  "nome": "HUAMBO BOLOS🍰",
+  "nome": "EMÍLIO🦅",
   "tagline": "Doces para cada momento especial",
   "slogan": "Criamos sabores que ficam na memória. Do casamento à festa de natal, cada detalhe conta.",
   "whatsapp": "244954288128",
   "logo": "",
-  "morada": "Luanda, Angola",
+  "morada": "Huambo, Angola",
   "instagram": "",
   "badge": "🎊 Confeitaria Artesanal · Luanda",
   "heroTitulo": "Doces que fazem\na festa!",
@@ -24,8 +24,8 @@ const LOJA_DEFAULT = {
   "ctaTitulo": "Tem um evento\na caminho?",
   "ctaSub": "Não deixe para a última hora!\nFaça já a sua encomenda e garanta o melhor para o seu evento.",
   "ctaBotao": "Fazer Encomenda Agora →",
-  "entregaActiva": true,
-  "levantamentoActivo": true,
+  "entregaActiva": false,
+  "levantamentoActivo": false,
   "pedidoPersActivo": true,
   "pedidoPersTexto": "✨ Encomenda Especial",
   "corPrincipal": "#ff6b9d",
@@ -42,7 +42,7 @@ const LOJA_DEFAULT = {
   "secCtaActiva": true,
   "campoDataActivo": true,
   "campoLocalActivo": true,
-  "cf_versao": 1
+  "cf_versao": 3
 };
 const DEPOIMENTOS_DEFAULT = [
   {
@@ -617,8 +617,9 @@ function initTheme(){document.documentElement.setAttribute('data-theme',getTheme
 function _syncThemeIcons(){const dark=getTheme()==='dark';document.querySelectorAll('[data-theme-ico]').forEach(el=>{el.className=dark?'fa-solid fa-sun':'fa-solid fa-moon';});}
 function applyThemeColors(){const l=getLoja(),r=document.documentElement.style,dark=getTheme()==='dark';if(l.corPrincipal)r.setProperty('--pink',l.corPrincipal);if(l.corGrad1&&l.corGrad2)r.setProperty('--grad','linear-gradient(135deg,'+l.corGrad1+','+l.corGrad2+')');if(dark){if(l.corFundo)r.setProperty('--bg',l.corFundo);}else{r.removeProperty('--bg');}}
 function cfHash(s){let h=5381;for(let i=0;i<s.length;i++){h=((h<<5)+h)^s.charCodeAt(i);h|=0;}return(h>>>0).toString(16);}
-function getAdminHash(){const local=localStorage.getItem('cf_admin_hash');if(local)return local;if(typeof _ADMIN_PIN_HASH!=='undefined'&&_ADMIN_PIN_HASH)return _ADMIN_PIN_HASH;return '7c5403c9';}
+function getAdminHash(){const local=localStorage.getItem('cf_admin_hash');if(local)return local;if(typeof _ADMIN_PIN_HASH!=='undefined'&&_ADMIN_PIN_HASH&&_ADMIN_PIN_HASH!=='cf_default')return _ADMIN_PIN_HASH;return cfHash('1793');}
 function checkPin(pin){return cfHash(String(pin))===getAdminHash();}
 function savePin(pin){localStorage.setItem('cf_admin_hash',cfHash(String(pin)));}
 function _imgExt(b64){if(!b64||!b64.startsWith('data:'))return'webp';const m=b64.match(/^data:image\/(\w+);/);return m?(m[1]==='jpeg'?'jpg':m[1]):'webp';}
 function _prodsParaExport(prods){return prods.map(p=>{if(!p.imagem||!p.imagem.startsWith('data:'))return p;return Object.assign({},p,{imagem:'imgs/produto-'+p.id+'.'+_imgExt(p.imagem)});});}
+function gerarCatalogoJS(){return _getCatalogoJSContent();}
