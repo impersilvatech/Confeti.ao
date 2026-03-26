@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-AO" data-theme="dark">
-<head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Admin | CONFETI</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<html lang="pt-AO" data-theme="dark" style="--pink: #ff6b9d; --grad: linear-gradient(135deg,#ff6b9d,#b14ae8); --bg: #0d0d1a;"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Admin | EMÍLIO</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script>(function(){var t=localStorage.getItem('cf_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})()</script>
 <script>(function(){
   // Ler nome da loja directamente do localStorage — antes do catalogo.js carregar
@@ -19,8 +18,8 @@
     }
   }catch(_){}
 })()</script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;family=Fredoka+One&amp;display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0d0d1a;--bg2:#14142b;--card:#1a1a32;--border:#2a2a4a;--pink:#ff6b9d;--purple:#b14ae8;--teal:#06d6a0;--yellow:#ffd166;--coral:#ff9f43;--red:#ff4757;--white:#fff;--muted:#9898bb;--muted2:#4a4a6a;--ft:'Fredoka One',cursive;--fb:'Nunito',sans-serif;--r:12px;--tr:all .3s cubic-bezier(.4,0,.2,1);--grad:linear-gradient(135deg,#ff6b9d,#b14ae8)}
 [data-theme="light"]{--bg:#fff5f8;--bg2:#fff;--card:#fff;--border:#f0d6e8;--white:#1a0a2e;--muted:#7a5a8a;--muted2:#ccc}
@@ -187,23 +186,23 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
 <body>
 
 <!-- ECRÃ DE BLOQUEIO -->
-<div class="lock" id="lock">
-  <div class="lock-logo" id="lock-logo-txt">CONFETI</div>
+<div class="lock" id="lock" style="display: none;">
+  <div class="lock-logo" id="lock-logo-txt">EMÍLIO</div>
   <div class="lock-tag">Painel Administrativo</div>
-  <input type="password" class="lock-input" id="pwd" placeholder="••••••" onkeydown="if(event.key==='Enter')desbloq()"/>
+  <input type="password" class="lock-input" id="pwd" placeholder="••••••" onkeydown="if(event.key==='Enter')desbloq()">
   <button class="lock-btn" onclick="desbloq()">Entrar 🔓</button>
   <p class="lock-err" id="lock-err"></p>
 </div>
 
 <!-- APP PRINCIPAL -->
-<div id="app" style="display:none">
+<div id="app" style="display: block;">
   <div class="hdr">
     <div style="display:flex;align-items:center;gap:8px">
-      <span class="hdr-logo" id="admin-logo">CONFETI</span>
+      <span class="hdr-logo" id="admin-logo">EMÍLIO</span>
       <span style="font-size:.5rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);background:var(--bg2);border:1px solid var(--border);padding:2px 7px;border-radius:4px">Admin</span>
     </div>
     <div style="display:flex;gap:5px">
-      <button class="hb" onclick="toggleTheme()"><i data-theme-ico class="fa-solid fa-sun"></i></button>
+      <button class="hb" onclick="toggleTheme()"><i data-theme-ico="" class="fa-solid fa-sun"></i></button>
       <button class="hb" title="Ver loja" onclick="window.open('index.html','_blank')"><i class="fa-solid fa-house"></i></button>
       <button class="hb" onclick="sair()" title="Sair"><i class="fa-solid fa-right-from-bracket"></i></button>
     </div>
@@ -211,28 +210,28 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
 
   <!-- ABAS -->
   <div class="tabs">
-    <button class="tab on"  onclick="mudarTab(this,'tab-prods')"><i class="fa-solid fa-box" style="margin-right:4px"></i>Produtos</button>
-    <button class="tab"     onclick="mudarTab(this,'tab-cats')"><i class="fa-solid fa-tag" style="margin-right:4px"></i>Categorias</button>
-    <button class="tab"     onclick="mudarTab(this,'tab-vitrine')"><i class="fa-solid fa-display" style="margin-right:4px"></i>Vitrine</button>
-    <button class="tab"     onclick="mudarTab(this,'tab-conteudo')"><i class="fa-solid fa-pen-to-square" style="margin-right:4px"></i>Conteúdo</button>
-    <button class="tab"     onclick="mudarTab(this,'tab-aparencia')"><i class="fa-solid fa-palette" style="margin-right:4px"></i>Aparência</button>
-    <button class="tab"     onclick="mudarTab(this,'tab-loja')"><i class="fa-solid fa-gear" style="margin-right:4px"></i>Loja</button>
-    <button class="tab"     onclick="mudarTab(this,'tab-exportar')"><i class="fa-solid fa-cloud-arrow-up" style="margin-right:4px"></i>Exportar</button>
-    <button class="tab"     onclick="mudarTab(this,'tab-dados')"><i class="fa-solid fa-database" style="margin-right:4px"></i>Dados</button>
-    <button class="tab"     onclick="mudarTab(this,'tab-pwd')"><i class="fa-solid fa-lock" style="margin-right:4px"></i>Segurança</button>
+    <button class="tab" onclick="mudarTab(this,'tab-prods')"><i class="fa-solid fa-box" style="margin-right:4px"></i>Produtos</button>
+    <button class="tab" onclick="mudarTab(this,'tab-cats')"><i class="fa-solid fa-tag" style="margin-right:4px"></i>Categorias</button>
+    <button class="tab" onclick="mudarTab(this,'tab-vitrine')"><i class="fa-solid fa-display" style="margin-right:4px"></i>Vitrine</button>
+    <button class="tab" onclick="mudarTab(this,'tab-conteudo')"><i class="fa-solid fa-pen-to-square" style="margin-right:4px"></i>Conteúdo</button>
+    <button class="tab" onclick="mudarTab(this,'tab-aparencia')"><i class="fa-solid fa-palette" style="margin-right:4px"></i>Aparência</button>
+    <button class="tab" onclick="mudarTab(this,'tab-loja')"><i class="fa-solid fa-gear" style="margin-right:4px"></i>Loja</button>
+    <button class="tab on" onclick="mudarTab(this,'tab-exportar')"><i class="fa-solid fa-cloud-arrow-up" style="margin-right:4px"></i>Exportar</button>
+    <button class="tab" onclick="mudarTab(this,'tab-dados')"><i class="fa-solid fa-database" style="margin-right:4px"></i>Dados</button>
+    <button class="tab" onclick="mudarTab(this,'tab-pwd')"><i class="fa-solid fa-lock" style="margin-right:4px"></i>Segurança</button>
   </div>
 
   <!-- ─── PRODUTOS ─── -->
-  <div class="panel on" id="tab-prods">
+  <div class="panel" id="tab-prods">
     <div class="card">
       <div class="card-hdr">
-        <div><div class="card-t">Produtos</div><div class="card-s" id="prods-ct"></div></div>
+        <div><div class="card-t">Produtos</div><div class="card-s" id="prods-ct">18 produtos</div></div>
         <button class="btn-sm prim" onclick="abrirProd(-1)">+ Novo</button>
       </div>
       <div style="position:relative;margin-bottom:10px">
-        <input type="search" id="prod-search" placeholder="🔍 Pesquisar produto..." style="width:100%;padding:9px 12px;background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;font-family:var(--fb);font-size:.82rem;color:var(--white);outline:none" oninput="renderP()"/>
+        <input type="search" id="prod-search" placeholder="🔍 Pesquisar produto..." style="width:100%;padding:9px 12px;background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;font-family:var(--fb);font-size:.82rem;color:var(--white);outline:none" oninput="renderP()">
       </div>
-      <div class="plist" id="plist"></div>
+      <div class="plist" id="plist"><div class="pitem" onclick="abrirProd(101)"><div class="pitem-ico"><img src="imagens/bolo-de-casamento-classico-p2tj.webp" alt=""></div><div class="pitem-info"><div class="pitem-nome">Bolo de Casamento Clássico<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--coral);color:#fff;margin-left:5px">destaque</span></div><div class="pitem-sub">Bolos</div></div><span class="pitem-preco">45&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(102)"><div class="pitem-ico">🎂</div><div class="pitem-info"><div class="pitem-nome">Bolo Temático Festa<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--red);color:#fff;margin-left:5px">promo</span></div><div class="pitem-sub">Bolos</div></div><span class="pitem-preco">18&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(103)"><div class="pitem-ico">👶</div><div class="pitem-info"><div class="pitem-nome">Bolo de Baptizado<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--teal);color:#0d0d1a;margin-left:5px">novo</span></div><div class="pitem-sub">Bolos</div></div><span class="pitem-preco">22&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(104)"><div class="pitem-ico">🍰</div><div class="pitem-info"><div class="pitem-nome">Bolo Naked Cake<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--red);color:#fff;margin-left:5px">promo</span></div><div class="pitem-sub">Bolos</div></div><span class="pitem-preco">15&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(105)"><div class="pitem-ico">🎄</div><div class="pitem-info"><div class="pitem-nome">Bolo de Natal Especial<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--teal);color:#0d0d1a;margin-left:5px">novo</span></div><div class="pitem-sub">Bolos</div></div><span class="pitem-preco">20&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(201)"><div class="pitem-ico">🍗</div><div class="pitem-info"><div class="pitem-nome">Coxinhas (50 unidades)<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--red);color:#fff;margin-left:5px">promo</span></div><div class="pitem-sub">Salgados</div></div><span class="pitem-preco">8&nbsp;500 Kz</span></div><div class="pitem" onclick="abrirProd(202)"><div class="pitem-ico">🥟</div><div class="pitem-info"><div class="pitem-nome">Rissóis (50 unidades)</div><div class="pitem-sub">Salgados</div></div><span class="pitem-preco">8&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(203)"><div class="pitem-ico">🥙</div><div class="pitem-info"><div class="pitem-nome">Pastéis (50 unidades)</div><div class="pitem-sub">Salgados</div></div><span class="pitem-preco">7&nbsp;500 Kz</span></div><div class="pitem" onclick="abrirProd(204)"><div class="pitem-ico">🎊</div><div class="pitem-info"><div class="pitem-nome">Mix de Salgados (100 un.)<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--red);color:#fff;margin-left:5px">promo</span></div><div class="pitem-sub">Salgados</div></div><span class="pitem-preco">18&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(205)"><div class="pitem-ico">✨</div><div class="pitem-info"><div class="pitem-nome">Mini Salgados Finos (80 un.)<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--teal);color:#0d0d1a;margin-left:5px">novo</span></div><div class="pitem-sub">Salgados</div></div><span class="pitem-preco">16&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(301)"><div class="pitem-ico">🎄</div><div class="pitem-info"><div class="pitem-nome">Kit Natal Familiar<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--red);color:#fff;margin-left:5px">promo</span></div><div class="pitem-sub">Kits de Eventos</div></div><span class="pitem-preco">35&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(302)"><div class="pitem-ico">🎆</div><div class="pitem-info"><div class="pitem-nome">Kit Ano Novo Celebração<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--red);color:#fff;margin-left:5px">promo</span></div><div class="pitem-sub">Kits de Eventos</div></div><span class="pitem-preco">38&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(303)"><div class="pitem-ico">🎠</div><div class="pitem-info"><div class="pitem-nome">Kit Festa Infantil<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--red);color:#fff;margin-left:5px">promo</span></div><div class="pitem-sub">Kits de Eventos</div></div><span class="pitem-preco">28&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(304)"><div class="pitem-ico">💒</div><div class="pitem-info"><div class="pitem-nome">Kit Casamento Completo<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--coral);color:#fff;margin-left:5px">destaque</span></div><div class="pitem-sub">Kits de Eventos</div></div><span class="pitem-preco">120&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(401)"><div class="pitem-ico">🍬</div><div class="pitem-info"><div class="pitem-nome">Mesa de Doces Simples</div><div class="pitem-sub">Mesas de Doces</div></div><span class="pitem-preco">25&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(402)"><div class="pitem-ico">✨</div><div class="pitem-info"><div class="pitem-nome">Mesa de Doces Premium<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--coral);color:#fff;margin-left:5px">destaque</span></div><div class="pitem-sub">Mesas de Doces</div></div><span class="pitem-preco">55&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(403)"><div class="pitem-ico">🍭</div><div class="pitem-info"><div class="pitem-nome">Candy Bar Completo<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--red);color:#fff;margin-left:5px">promo</span></div><div class="pitem-sub">Mesas de Doces</div></div><span class="pitem-preco">75&nbsp;000 Kz</span></div><div class="pitem" onclick="abrirProd(501)"><div class="pitem-ico">💌</div><div class="pitem-info"><div class="pitem-nome">Encomenda Especial Personalizada<span style="font-size:.52rem;padding:2px 6px;border-radius:4px;background:var(--coral);color:#fff;margin-left:5px">especial</span></div><div class="pitem-sub">Encomenda Especial</div></div><span class="pitem-preco">Orç.</span></div></div>
     </div>
   </div>
 
@@ -240,62 +239,66 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
   <div class="panel" id="tab-cats">
     <div class="card">
       <div class="card-hdr">
-        <div><div class="card-t">Categorias</div><div class="card-s" id="cats-ct"></div></div>
+        <div><div class="card-t">Categorias</div><div class="card-s" id="cats-ct">5 categorias</div></div>
         <button class="btn-sm prim" onclick="abrirCat(-1)">+ Nova</button>
       </div>
-      <div class="plist" id="clist"></div>
+      <div class="plist" id="clist"><div class="pitem" onclick="abrirCat('bolos')"><div class="pitem-ico">🎂</div><div class="pitem-info"><div class="pitem-nome">Bolos</div><div class="pitem-sub">ID: bolos · 5 produtos</div></div><span style="width:18px;height:18px;border-radius:50%;background:#ff6b9d;display:inline-block;border:2px solid rgba(255,255,255,.15);flex-shrink:0"></span></div><div class="pitem" onclick="abrirCat('salgados')"><div class="pitem-ico">🥟</div><div class="pitem-info"><div class="pitem-nome">Salgados</div><div class="pitem-sub">ID: salgados · 5 produtos</div></div><span style="width:18px;height:18px;border-radius:50%;background:#ffd166;display:inline-block;border:2px solid rgba(255,255,255,.15);flex-shrink:0"></span></div><div class="pitem" onclick="abrirCat('kits')"><div class="pitem-ico">🎁</div><div class="pitem-info"><div class="pitem-nome">Kits de Eventos</div><div class="pitem-sub">ID: kits · 4 produtos</div></div><span style="width:18px;height:18px;border-radius:50%;background:#06d6a0;display:inline-block;border:2px solid rgba(255,255,255,.15);flex-shrink:0"></span></div><div class="pitem" onclick="abrirCat('mesas')"><div class="pitem-ico">✨</div><div class="pitem-info"><div class="pitem-nome">Mesas de Doces</div><div class="pitem-sub">ID: mesas · 3 produtos</div></div><span style="width:18px;height:18px;border-radius:50%;background:#b14ae8;display:inline-block;border:2px solid rgba(255,255,255,.15);flex-shrink:0"></span></div><div class="pitem" onclick="abrirCat('especial')"><div class="pitem-ico">💌</div><div class="pitem-info"><div class="pitem-nome">Encomenda Especial</div><div class="pitem-sub">ID: especial · 1 produtos</div></div><span style="width:18px;height:18px;border-radius:50%;background:#ff9f43;display:inline-block;border:2px solid rgba(255,255,255,.15);flex-shrink:0"></span></div></div>
     </div>
   </div>
 
   <!-- ─── VITRINE ─── -->
   <div class="panel" id="tab-vitrine">
     <div class="card">
-      <div class="card-t" style="margin-bottom:12px">🖥️ Vitrine & Landing</div>
+      <div class="card-t" style="margin-bottom:12px">🖥️ Vitrine &amp; Landing</div>
       <div class="info-badge">💡 Edições guardadas imediatamente. Para publicar em todos os dispositivos, use a aba Exportar.</div>
 
       <div class="sep">Hero</div>
-      <div class="fg"><label>Badge do hero</label><input type="text" id="vt-badge" placeholder="🎊 Confeitaria Artesanal · Luanda"/></div>
-      <div class="fg"><label>Título do hero (use \n para quebra de linha)</label><textarea id="vt-heroTitulo" rows="2" placeholder="Doces que fazem&#10;a festa!"></textarea></div>
+      <div class="fg"><label>Badge do hero</label><input type="text" id="vt-badge" placeholder="🎊 Confeitaria Artesanal · Luanda"></div>
+      <div class="fg"><label>Título do hero (use \n para quebra de linha)</label><textarea id="vt-heroTitulo" rows="2" placeholder="Doces que fazem
+a festa!"></textarea></div>
 
       <div class="sep">Banner de destaque</div>
-      <div class="sw-row"><span class="sw-l">Banner activo</span><button class="sw" id="sw-banner" onclick="toggleSw(this)"></button></div>
-      <div class="fg" style="margin-top:10px"><label>Texto do banner</label><input type="text" id="vt-banner" placeholder="🎄 Promoção de Natal — encomende já!"/></div>
+      <div class="sw-row"><span class="sw-l">Banner activo</span><button class="sw on" id="sw-banner" onclick="toggleSw(this)"></button></div>
+      <div class="fg" style="margin-top:10px"><label>Texto do banner</label><input type="text" id="vt-banner" placeholder="🎄 Promoção de Natal — encomende já!"></div>
 
       <div class="sep">Frase do dia</div>
-      <div class="fg"><label>Frase do dia (aparece no formulário de dados)</label><input type="text" id="vt-frase" placeholder="🎉 Encomendas para o Natal já abertas!"/></div>
+      <div class="fg"><label>Frase do dia (aparece no formulário de dados)</label><input type="text" id="vt-frase" placeholder="🎉 Encomendas para o Natal já abertas!"></div>
 
       <div class="sep">Estatísticas</div>
       <div class="fg-row">
-        <div class="fg"><label>Anos de experiência</label><input type="text" id="vt-anos" placeholder="5"/></div>
-        <div class="fg"><label>Clientes satisfeitos</label><input type="text" id="vt-clientes" placeholder="500+"/></div>
+        <div class="fg"><label>Anos de experiência</label><input type="text" id="vt-anos" placeholder="5"></div>
+        <div class="fg"><label>Clientes satisfeitos</label><input type="text" id="vt-clientes" placeholder="500+"></div>
       </div>
-      <div class="fg"><label>Eventos realizados</label><input type="text" id="vt-ev-stat" placeholder="200+"/></div>
+      <div class="fg"><label>Eventos realizados</label><input type="text" id="vt-ev-stat" placeholder="200+"></div>
 
       <div class="sep">Secção "O que fazemos" (categorias)</div>
-      <div class="fg"><label>Badge da secção</label><input type="text" id="vt-cats-badge" placeholder="🍰 O que fazemos"/></div>
-      <div class="fg"><label>Título (use \n para quebra de linha)</label><textarea id="vt-cats-titulo" rows="2" placeholder="Tudo para o&#10;seu evento"></textarea></div>
-      <div class="fg"><label>Subtítulo</label><input type="text" id="vt-cats-sub" placeholder="Cada produto feito com amor, qualidade e atenção ao detalhe"/></div>
+      <div class="fg"><label>Badge da secção</label><input type="text" id="vt-cats-badge" placeholder="🍰 O que fazemos"></div>
+      <div class="fg"><label>Título (use \n para quebra de linha)</label><textarea id="vt-cats-titulo" rows="2" placeholder="Tudo para o
+seu evento"></textarea></div>
+      <div class="fg"><label>Subtítulo</label><input type="text" id="vt-cats-sub" placeholder="Cada produto feito com amor, qualidade e atenção ao detalhe"></div>
 
       <div class="sep">Secção CTA (chamada à acção)</div>
       <div class="fg-row">
-        <div class="fg"><label>Emoji</label><input type="text" id="vt-cta-emoji" placeholder="🎊"/></div>
-        <div class="fg"><label>Texto do botão</label><input type="text" id="vt-cta-btn" placeholder="Fazer Encomenda Agora →"/></div>
+        <div class="fg"><label>Emoji</label><input type="text" id="vt-cta-emoji" placeholder="🎊"></div>
+        <div class="fg"><label>Texto do botão</label><input type="text" id="vt-cta-btn" placeholder="Fazer Encomenda Agora →"></div>
       </div>
-      <div class="fg"><label>Título (use \n para quebra de linha)</label><textarea id="vt-cta-titulo" rows="2" placeholder="Tem um evento&#10;a caminho?"></textarea></div>
-      <div class="fg"><label>Subtítulo (use \n para nova linha)</label><textarea id="vt-cta-sub" rows="2" placeholder="Não deixe para a última hora!&#10;Faça já a sua encomenda..."></textarea></div>
+      <div class="fg"><label>Título (use \n para quebra de linha)</label><textarea id="vt-cta-titulo" rows="2" placeholder="Tem um evento
+a caminho?"></textarea></div>
+      <div class="fg"><label>Subtítulo (use \n para nova linha)</label><textarea id="vt-cta-sub" rows="2" placeholder="Não deixe para a última hora!
+Faça já a sua encomenda..."></textarea></div>
 
       <div class="sep">🔍 Visibilidade de secções — Vitrine</div>
       <div class="info-badge" style="margin-bottom:10px">💡 Liga/desliga cada secção na página principal (index). A secção Categorias está sempre visível.</div>
-      <div class="sw-row"><span class="sw-l">📊 Stats (anos / clientes / eventos)</span><button class="sw" id="sw-sec-stats" onclick="toggleSw(this)"></button></div>
-      <div class="sw-row"><span class="sw-l">✨ Como funciona (4 passos)</span><button class="sw" id="sw-sec-comofunciona" onclick="toggleSw(this)"></button></div>
-      <div class="sw-row"><span class="sw-l">💎 Porquê nós (destaques)</span><button class="sw" id="sw-sec-features" onclick="toggleSw(this)"></button></div>
-      <div class="sw-row"><span class="sw-l">🎉 Para cada momento (eventos)</span><button class="sw" id="sw-sec-eventos" onclick="toggleSw(this)"></button></div>
-      <div class="sw-row"><span class="sw-l">⭐ Depoimentos de clientes</span><button class="sw" id="sw-sec-depoimentos" onclick="toggleSw(this)"></button></div>
-      <div class="sw-row" style="border-bottom:none"><span class="sw-l">📣 CTA (chamada à acção)</span><button class="sw" id="sw-sec-cta" onclick="toggleSw(this)"></button></div>
+      <div class="sw-row"><span class="sw-l">📊 Stats (anos / clientes / eventos)</span><button class="sw on" id="sw-sec-stats" onclick="toggleSw(this)"></button></div>
+      <div class="sw-row"><span class="sw-l">✨ Como funciona (4 passos)</span><button class="sw on" id="sw-sec-comofunciona" onclick="toggleSw(this)"></button></div>
+      <div class="sw-row"><span class="sw-l">💎 Porquê nós (destaques)</span><button class="sw on" id="sw-sec-features" onclick="toggleSw(this)"></button></div>
+      <div class="sw-row"><span class="sw-l">🎉 Para cada momento (eventos)</span><button class="sw on" id="sw-sec-eventos" onclick="toggleSw(this)"></button></div>
+      <div class="sw-row"><span class="sw-l">⭐ Depoimentos de clientes</span><button class="sw on" id="sw-sec-depoimentos" onclick="toggleSw(this)"></button></div>
+      <div class="sw-row" style="border-bottom:none"><span class="sw-l">📣 CTA (chamada à acção)</span><button class="sw on" id="sw-sec-cta" onclick="toggleSw(this)"></button></div>
 
       <div class="sep" style="margin-top:12px">📋 Visibilidade — Confirmação de encomenda</div>
-      <div class="sw-row"><span class="sw-l">📅 Campo "Data do evento"</span><button class="sw" id="sw-campo-data" onclick="toggleSw(this)"></button></div>
-      <div class="sw-row" style="border-bottom:none"><span class="sw-l">📍 Campo "Local de entrega"</span><button class="sw" id="sw-campo-local" onclick="toggleSw(this)"></button></div>
+      <div class="sw-row"><span class="sw-l">📅 Campo "Data do evento"</span><button class="sw on" id="sw-campo-data" onclick="toggleSw(this)"></button></div>
+      <div class="sw-row" style="border-bottom:none"><span class="sw-l">📍 Campo "Local de entrega"</span><button class="sw on" id="sw-campo-local" onclick="toggleSw(this)"></button></div>
 
       <button class="btn-sm save full" onclick="salvarVitrine()">Guardar Vitrine</button>
     </div>
@@ -306,7 +309,95 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
         <div><div class="card-t">🎉 «Para cada momento» — Tipos de Evento</div><div class="card-s">8 cards editáveis na vitrine</div></div>
         <button class="btn-sm prim" onclick="addEvento()">+ Adicionar</button>
       </div>
-      <div id="ev-list"></div>
+      <div id="ev-list">
+    <div class="dep-item" style="margin-bottom:8px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <input type="text" value="💒" oninput="_evs[0].emoji=this.value" style="width:52px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:1.1rem;text-align:center">
+        <input type="text" value="Casamentos" oninput="_evs[0].nome=this.value" placeholder="Nome" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.82rem">
+        <button class="btn-sm dang" style="padding:4px 8px;font-size:.62rem" onclick="_evs.splice(0,1);salvarEventos();renderEventos()">✕</button>
+      </div>
+      <div style="display:flex;gap:6px">
+        <input type="text" value="Bolos &amp; mesas luxo" oninput="_evs[0].sub=this.value" placeholder="Subtítulo" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.78rem">
+        <input type="text" value="bolos" oninput="_evs[0].cat=this.value" placeholder="cat (ID)" style="width:80px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.72rem">
+      </div>
+    </div>
+    <div class="dep-item" style="margin-bottom:8px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <input type="text" value="🎂" oninput="_evs[1].emoji=this.value" style="width:52px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:1.1rem;text-align:center">
+        <input type="text" value="Aniversários" oninput="_evs[1].nome=this.value" placeholder="Nome" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.82rem">
+        <button class="btn-sm dang" style="padding:4px 8px;font-size:.62rem" onclick="_evs.splice(1,1);salvarEventos();renderEventos()">✕</button>
+      </div>
+      <div style="display:flex;gap:6px">
+        <input type="text" value="Temas personalizados" oninput="_evs[1].sub=this.value" placeholder="Subtítulo" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.78rem">
+        <input type="text" value="bolos" oninput="_evs[1].cat=this.value" placeholder="cat (ID)" style="width:80px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.72rem">
+      </div>
+    </div>
+    <div class="dep-item" style="margin-bottom:8px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <input type="text" value="🎄" oninput="_evs[2].emoji=this.value" style="width:52px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:1.1rem;text-align:center">
+        <input type="text" value="Natal" oninput="_evs[2].nome=this.value" placeholder="Nome" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.82rem">
+        <button class="btn-sm dang" style="padding:4px 8px;font-size:.62rem" onclick="_evs.splice(2,1);salvarEventos();renderEventos()">✕</button>
+      </div>
+      <div style="display:flex;gap:6px">
+        <input type="text" value="Kits &amp; bolos temáticos" oninput="_evs[2].sub=this.value" placeholder="Subtítulo" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.78rem">
+        <input type="text" value="kits" oninput="_evs[2].cat=this.value" placeholder="cat (ID)" style="width:80px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.72rem">
+      </div>
+    </div>
+    <div class="dep-item" style="margin-bottom:8px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <input type="text" value="🎆" oninput="_evs[3].emoji=this.value" style="width:52px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:1.1rem;text-align:center">
+        <input type="text" value="Ano Novo" oninput="_evs[3].nome=this.value" placeholder="Nome" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.82rem">
+        <button class="btn-sm dang" style="padding:4px 8px;font-size:.62rem" onclick="_evs.splice(3,1);salvarEventos();renderEventos()">✕</button>
+      </div>
+      <div style="display:flex;gap:6px">
+        <input type="text" value="Celebração completa" oninput="_evs[3].sub=this.value" placeholder="Subtítulo" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.78rem">
+        <input type="text" value="kits" oninput="_evs[3].cat=this.value" placeholder="cat (ID)" style="width:80px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.72rem">
+      </div>
+    </div>
+    <div class="dep-item" style="margin-bottom:8px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <input type="text" value="👶" oninput="_evs[4].emoji=this.value" style="width:52px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:1.1rem;text-align:center">
+        <input type="text" value="Baptizados" oninput="_evs[4].nome=this.value" placeholder="Nome" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.82rem">
+        <button class="btn-sm dang" style="padding:4px 8px;font-size:.62rem" onclick="_evs.splice(4,1);salvarEventos();renderEventos()">✕</button>
+      </div>
+      <div style="display:flex;gap:6px">
+        <input type="text" value="Delicado &amp; especial" oninput="_evs[4].sub=this.value" placeholder="Subtítulo" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.78rem">
+        <input type="text" value="bolos" oninput="_evs[4].cat=this.value" placeholder="cat (ID)" style="width:80px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.72rem">
+      </div>
+    </div>
+    <div class="dep-item" style="margin-bottom:8px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <input type="text" value="🎓" oninput="_evs[5].emoji=this.value" style="width:52px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:1.1rem;text-align:center">
+        <input type="text" value="Formaturas" oninput="_evs[5].nome=this.value" placeholder="Nome" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.82rem">
+        <button class="btn-sm dang" style="padding:4px 8px;font-size:.62rem" onclick="_evs.splice(5,1);salvarEventos();renderEventos()">✕</button>
+      </div>
+      <div style="display:flex;gap:6px">
+        <input type="text" value="Conquistas a festejar" oninput="_evs[5].sub=this.value" placeholder="Subtítulo" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.78rem">
+        <input type="text" value="" oninput="_evs[5].cat=this.value" placeholder="cat (ID)" style="width:80px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.72rem">
+      </div>
+    </div>
+    <div class="dep-item" style="margin-bottom:8px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <input type="text" value="💼" oninput="_evs[6].emoji=this.value" style="width:52px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:1.1rem;text-align:center">
+        <input type="text" value="Corporativos" oninput="_evs[6].nome=this.value" placeholder="Nome" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.82rem">
+        <button class="btn-sm dang" style="padding:4px 8px;font-size:.62rem" onclick="_evs.splice(6,1);salvarEventos();renderEventos()">✕</button>
+      </div>
+      <div style="display:flex;gap:6px">
+        <input type="text" value="Eventos de empresa" oninput="_evs[6].sub=this.value" placeholder="Subtítulo" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.78rem">
+        <input type="text" value="" oninput="_evs[6].cat=this.value" placeholder="cat (ID)" style="width:80px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.72rem">
+      </div>
+    </div>
+    <div class="dep-item" style="margin-bottom:8px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <input type="text" value="🎠" oninput="_evs[7].emoji=this.value" style="width:52px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:1.1rem;text-align:center">
+        <input type="text" value="Festas Infantis" oninput="_evs[7].nome=this.value" placeholder="Nome" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.82rem">
+        <button class="btn-sm dang" style="padding:4px 8px;font-size:.62rem" onclick="_evs.splice(7,1);salvarEventos();renderEventos()">✕</button>
+      </div>
+      <div style="display:flex;gap:6px">
+        <input type="text" value="Magia &amp; diversão" oninput="_evs[7].sub=this.value" placeholder="Subtítulo" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.78rem">
+        <input type="text" value="kits" oninput="_evs[7].cat=this.value" placeholder="cat (ID)" style="width:80px;padding:6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.72rem">
+      </div>
+    </div></div>
       <button class="btn-sm save full" style="margin-top:10px" onclick="salvarEventos()">Guardar Eventos</button>
     </div>
   </div>
@@ -316,18 +407,83 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     <!-- Depoimentos -->
     <div class="card">
       <div class="card-hdr">
-        <div><div class="card-t">⭐ Depoimentos</div><div class="card-s" id="deps-ct"></div></div>
+        <div><div class="card-t">⭐ Depoimentos</div><div class="card-s" id="deps-ct">3 depoimentos</div></div>
         <button class="btn-sm prim" onclick="abrirDep(-1)">+ Novo</button>
       </div>
-      <div id="deps-list"></div>
+      <div id="deps-list">
+    <div class="dep-item">
+      <div class="dep-item-hdr">
+        <div class="dep-av">👰</div>
+        <div class="dep-info"><div class="dep-nome">Ana Cristina</div><div class="dep-ev">Casamento — Junho 2024</div><div class="dep-stars">⭐⭐⭐⭐⭐</div></div>
+      </div>
+      <div class="dep-txt">"O bolo do casamento foi simplesmente perfeito! Cada detalhe foi feito com cuidado e o sabor... incrível. Toda a gente perguntou de onde era o bolo!"</div>
+      <div class="dep-actions">
+        <button class="btn-sm prim" style="padding:4px 10px;font-size:.62rem" onclick="abrirDep(1)"><i class="fa-solid fa-pen"></i> Editar</button>
+        <button class="btn-sm dang" style="padding:4px 10px;font-size:.62rem" onclick="deletarDepId(1)">🗑️</button>
+      </div>
+    </div>
+    <div class="dep-item">
+      <div class="dep-item-hdr">
+        <div class="dep-av">🎄</div>
+        <div class="dep-info"><div class="dep-nome">Carlos Mendes</div><div class="dep-ev">Kit Natal — Dezembro 2023</div><div class="dep-stars">⭐⭐⭐⭐⭐</div></div>
+      </div>
+      <div class="dep-txt">"Encomendei o Kit Natal Familiar e ficou maravilhoso. Os salgados acabaram em minutos na festa! Vou encomendar de novo este ano com certeza."</div>
+      <div class="dep-actions">
+        <button class="btn-sm prim" style="padding:4px 10px;font-size:.62rem" onclick="abrirDep(2)"><i class="fa-solid fa-pen"></i> Editar</button>
+        <button class="btn-sm dang" style="padding:4px 10px;font-size:.62rem" onclick="deletarDepId(2)">🗑️</button>
+      </div>
+    </div>
+    <div class="dep-item">
+      <div class="dep-item-hdr">
+        <div class="dep-av">👶</div>
+        <div class="dep-info"><div class="dep-nome">Joana Fernandes</div><div class="dep-ev">Baptizado — Março 2024</div><div class="dep-stars">⭐⭐⭐⭐⭐</div></div>
+      </div>
+      <div class="dep-txt">"A mesa de doces do baptizado do meu filho ficou linda! As pessoas ainda hoje falam. Muito obrigada pela dedicação e atenção aos detalhes."</div>
+      <div class="dep-actions">
+        <button class="btn-sm prim" style="padding:4px 10px;font-size:.62rem" onclick="abrirDep(3)"><i class="fa-solid fa-pen"></i> Editar</button>
+        <button class="btn-sm dang" style="padding:4px 10px;font-size:.62rem" onclick="deletarDepId(3)">🗑️</button>
+      </div>
+    </div></div>
     </div>
     <!-- Features / Porquê nós -->
     <div class="card">
       <div class="card-hdr">
-        <div><div class="card-t">✨ Porquê Nós</div><div class="card-s" id="feats-ct"></div></div>
+        <div><div class="card-t">✨ Porquê Nós</div><div class="card-s" id="feats-ct">4 razãoões</div></div>
         <button class="btn-sm prim" onclick="abrirFeat(-1)">+ Nova</button>
       </div>
-      <div id="feats-list"></div>
+      <div id="feats-list">
+    <div class="feat-item">
+      <div class="feat-ico">🎂</div>
+      <div class="feat-info"><div class="feat-titulo">Artesanal</div><div class="feat-desc">Cada produto feito à mão com ingredientes seleccionados</div></div>
+      <div class="feat-actions">
+        <button class="btn-sm prim" style="padding:4px 9px;font-size:.6rem" onclick="abrirFeat(1)">✏️</button>
+        <button class="btn-sm dang" style="padding:4px 9px;font-size:.6rem" onclick="deletarFeatId(1)">🗑️</button>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-ico">⏱️</div>
+      <div class="feat-info"><div class="feat-titulo">Pontual</div><div class="feat-desc">Entrega no dia e hora combinados, sem surpresas</div></div>
+      <div class="feat-actions">
+        <button class="btn-sm prim" style="padding:4px 9px;font-size:.6rem" onclick="abrirFeat(2)">✏️</button>
+        <button class="btn-sm dang" style="padding:4px 9px;font-size:.6rem" onclick="deletarFeatId(2)">🗑️</button>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-ico">✨</div>
+      <div class="feat-info"><div class="feat-titulo">Personalizado</div><div class="feat-desc">Cada encomenda adaptada ao seu tema e estilo</div></div>
+      <div class="feat-actions">
+        <button class="btn-sm prim" style="padding:4px 9px;font-size:.6rem" onclick="abrirFeat(3)">✏️</button>
+        <button class="btn-sm dang" style="padding:4px 9px;font-size:.6rem" onclick="deletarFeatId(3)">🗑️</button>
+      </div>
+    </div>
+    <div class="feat-item">
+      <div class="feat-ico">💬</div>
+      <div class="feat-info"><div class="feat-titulo">Atendimento</div><div class="feat-desc">Suporte directo via WhatsApp antes e após a entrega</div></div>
+      <div class="feat-actions">
+        <button class="btn-sm prim" style="padding:4px 9px;font-size:.6rem" onclick="abrirFeat(4)">✏️</button>
+        <button class="btn-sm dang" style="padding:4px 9px;font-size:.6rem" onclick="deletarFeatId(4)">🗑️</button>
+      </div>
+    </div></div>
     </div>
   </div>
 
@@ -341,8 +497,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
         <div class="img-pick-area">
           <div class="img-thumb" id="ap-logo-thumb" onclick="document.getElementById('ap-logo-file').click()">🎊</div>
           <div class="img-pick-btns">
-            <label class="btn-upload"><i class="fa-solid fa-folder-open" style="margin-right:5px"></i>Do dispositivo<input type="file" id="ap-logo-file" accept="image/*" onchange="carregarImg(this,'ap-logo-url','ap-logo-thumb')"/></label>
-            <input type="text" id="ap-logo-url" placeholder="ou URL da imagem..." oninput="prevUrl(this.value,'ap-logo-thumb')"/>
+            <label class="btn-upload"><i class="fa-solid fa-folder-open" style="margin-right:5px"></i>Do dispositivo<input type="file" id="ap-logo-file" accept="image/*" onchange="carregarImg(this,'ap-logo-url','ap-logo-thumb')"></label>
+            <input type="text" id="ap-logo-url" placeholder="ou URL da imagem..." oninput="prevUrl(this.value,'ap-logo-thumb')">
             <button class="btn-clr-img" onclick="limparImg('ap-logo-url','ap-logo-thumb')">✕ Remover</button>
           </div>
         </div>
@@ -351,30 +507,30 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
       <div class="fg">
         <label>Cor principal (botões, acentos)</label>
         <div class="cor-row">
-          <input type="color" class="cor-swatch" id="ap-cor" value="#ff6b9d" oninput="prevGrad()" onchange="prevGrad()"/>
-          <input type="text" id="ap-cor-txt" value="#ff6b9d" style="flex:1;padding:8px 10px;background:var(--bg2);border:1.5px solid var(--border);border-radius:8px;font-family:var(--fb);font-size:.8rem;color:var(--white);outline:none" oninput="syncCor(this.value,'ap-cor');prevGrad()"/>
+          <input type="color" class="cor-swatch" id="ap-cor" value="#ff6b9d" oninput="prevGrad()" onchange="prevGrad()">
+          <input type="text" id="ap-cor-txt" value="#ff6b9d" style="flex:1;padding:8px 10px;background:var(--bg2);border:1.5px solid var(--border);border-radius:8px;font-family:var(--fb);font-size:.8rem;color:var(--white);outline:none" oninput="syncCor(this.value,'ap-cor');prevGrad()">
         </div>
       </div>
       <div class="fg">
         <label>Gradiente — Cor 1</label>
         <div class="cor-row">
-          <input type="color" class="cor-swatch" id="ap-g1" value="#ff6b9d" oninput="prevGrad()" onchange="prevGrad()"/>
-          <input type="text" id="ap-g1-txt" value="#ff6b9d" style="flex:1;padding:8px 10px;background:var(--bg2);border:1.5px solid var(--border);border-radius:8px;font-family:var(--fb);font-size:.8rem;color:var(--white);outline:none" oninput="syncCor(this.value,'ap-g1');prevGrad()"/>
+          <input type="color" class="cor-swatch" id="ap-g1" value="#ff6b9d" oninput="prevGrad()" onchange="prevGrad()">
+          <input type="text" id="ap-g1-txt" value="#ff6b9d" style="flex:1;padding:8px 10px;background:var(--bg2);border:1.5px solid var(--border);border-radius:8px;font-family:var(--fb);font-size:.8rem;color:var(--white);outline:none" oninput="syncCor(this.value,'ap-g1');prevGrad()">
         </div>
       </div>
       <div class="fg">
         <label>Gradiente — Cor 2</label>
         <div class="cor-row">
-          <input type="color" class="cor-swatch" id="ap-g2" value="#b14ae8" oninput="prevGrad()" onchange="prevGrad()"/>
-          <input type="text" id="ap-g2-txt" value="#b14ae8" style="flex:1;padding:8px 10px;background:var(--bg2);border:1.5px solid var(--border);border-radius:8px;font-family:var(--fb);font-size:.8rem;color:var(--white);outline:none" oninput="syncCor(this.value,'ap-g2');prevGrad()"/>
+          <input type="color" class="cor-swatch" id="ap-g2" value="#b14ae8" oninput="prevGrad()" onchange="prevGrad()">
+          <input type="text" id="ap-g2-txt" value="#b14ae8" style="flex:1;padding:8px 10px;background:var(--bg2);border:1.5px solid var(--border);border-radius:8px;font-family:var(--fb);font-size:.8rem;color:var(--white);outline:none" oninput="syncCor(this.value,'ap-g2');prevGrad()">
         </div>
       </div>
-      <div id="grad-preview" class="color-preview">Pré-visualização do gradiente</div>
+      <div id="grad-preview" class="color-preview" style="background: linear-gradient(135deg, rgb(255, 107, 157), rgb(177, 74, 232));">Pré-visualização do gradiente</div>
       <div class="fg" style="margin-top:12px">
         <label>Cor de fundo (modo escuro)</label>
         <div class="cor-row">
-          <input type="color" class="cor-swatch" id="ap-bg" value="#0d0d1a" oninput="prevGrad()" onchange="prevGrad()"/>
-          <input type="text" id="ap-bg-txt" value="#0d0d1a" style="flex:1;padding:8px 10px;background:var(--bg2);border:1.5px solid var(--border);border-radius:8px;font-family:var(--fb);font-size:.8rem;color:var(--white);outline:none" oninput="syncCor(this.value,'ap-bg')"/>
+          <input type="color" class="cor-swatch" id="ap-bg" value="#0d0d1a" oninput="prevGrad()" onchange="prevGrad()">
+          <input type="text" id="ap-bg-txt" value="#0d0d1a" style="flex:1;padding:8px 10px;background:var(--bg2);border:1.5px solid var(--border);border-radius:8px;font-family:var(--fb);font-size:.8rem;color:var(--white);outline:none" oninput="syncCor(this.value,'ap-bg')">
         </div>
       </div>
       <button class="btn-sm save full" style="margin-top:12px" onclick="salvarAparencia()">Guardar Aparência</button>
@@ -385,41 +541,41 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
   <div class="panel" id="tab-loja">
     <div class="card">
       <div class="card-t" style="margin-bottom:12px"><i class="fa-solid fa-gear" style="margin-right:6px"></i>Configurações da Loja</div>
-      <div class="fg"><label>Nome da loja</label><input type="text" id="lj-nome"/></div>
-      <div class="fg"><label>Tagline (frase curta)</label><input type="text" id="lj-tagline"/></div>
+      <div class="fg"><label>Nome da loja</label><input type="text" id="lj-nome"></div>
+      <div class="fg"><label>Tagline (frase curta)</label><input type="text" id="lj-tagline"></div>
       <div class="fg"><label>Slogan (descrição longa)</label><textarea id="lj-slogan" rows="2"></textarea></div>
       <div class="fg-row">
-        <div class="fg"><label>WhatsApp (só números)</label><input type="tel" id="lj-wpp" placeholder="244954288128"/></div>
-        <div class="fg"><label>Instagram</label><input type="text" id="lj-ig" placeholder="@confeti.ao"/></div>
+        <div class="fg"><label>WhatsApp (só números)</label><input type="tel" id="lj-wpp" placeholder="244954288128"></div>
+        <div class="fg"><label>Instagram</label><input type="text" id="lj-ig" placeholder="@confeti.ao"></div>
       </div>
       <div class="fg-row">
-        <div class="fg"><label>Facebook</label><input type="text" id="lj-fb" placeholder="confeti.ao ou URL completo"/></div>
-        <div class="fg"><label>TikTok</label><input type="text" id="lj-tt" placeholder="@confeti.ao"/></div>
+        <div class="fg"><label>Facebook</label><input type="text" id="lj-fb" placeholder="confeti.ao ou URL completo"></div>
+        <div class="fg"><label>TikTok</label><input type="text" id="lj-tt" placeholder="@confeti.ao"></div>
       </div>
-      <div class="fg"><label>Morada</label><input type="text" id="lj-morada" placeholder="Luanda, Angola"/></div>
+      <div class="fg"><label>Morada</label><input type="text" id="lj-morada" placeholder="Luanda, Angola"></div>
       <div class="sep">Activações</div>
       <div class="sw-row"><span class="sw-l">🚚 Entrega ao domicílio</span><button class="sw" id="sw-ent" onclick="toggleSw(this)"></button></div>
       <div class="sw-row"><span class="sw-l">🏪 Levantamento na loja</span><button class="sw" id="sw-lev" onclick="toggleSw(this)"></button></div>
-      <div class="sw-row"><span class="sw-l">💌 Encomendas especiais</span><button class="sw" id="sw-pers" onclick="toggleSw(this)"></button></div>
+      <div class="sw-row"><span class="sw-l">💌 Encomendas especiais</span><button class="sw on" id="sw-pers" onclick="toggleSw(this)"></button></div>
       <button class="btn-sm save full" style="margin-top:14px" onclick="salvarLoja()">Guardar Configurações</button>
     </div>
   </div>
 
   <!-- ─── EXPORTAR ─── -->
-  <div class="panel" id="tab-exportar">
+  <div class="panel on" id="tab-exportar">
 
     <!-- CONFIGURAÇÃO DO SERVIDOR (pré-configurado pela IMPERSILVA TECH) -->
     <div class="card" id="card-sync-cfg">
       <div class="card-hdr" style="margin-bottom:10px">
-        <div><div class="card-t"><i class="fa-solid fa-link" style="margin-right:6px"></i>Sincronização de imagens</div><div class="card-s" id="sync-status-txt">A verificar...</div></div>
+        <div><div class="card-t"><i class="fa-solid fa-link" style="margin-right:6px"></i>Sincronização de imagens</div><div class="card-s" id="sync-status-txt" style="color: var(--teal);">✅ Sincronização activa — imagens enviadas automaticamente</div></div>
         <button class="btn-sm ghost" style="font-size:.6rem" onclick="toggleSyncCfg()"><i class="fa-solid fa-gear"></i></button>
       </div>
       <div id="sync-cfg-fields" style="display:none">
         <div class="info-badge" style="margin-bottom:10px">🔒 Configuração técnica — não alterar sem instrução da equipa.</div>
-        <div class="fg"><label>Servidor</label><input type="text" id="sync-usr" placeholder="identificador do servidor"/></div>
-        <div class="fg"><label>Projecto</label><input type="text" id="sync-proj" placeholder="nome do projecto"/></div>
-        <div class="fg"><label>Ramo</label><input type="text" id="sync-branch" placeholder="main"/></div>
-        <div class="fg"><label>Chave de acesso</label><input type="password" id="sync-key" placeholder="••••••••••••••••"/></div>
+        <div class="fg"><label>Servidor</label><input type="text" id="sync-usr" placeholder="identificador do servidor"></div>
+        <div class="fg"><label>Projecto</label><input type="text" id="sync-proj" placeholder="nome do projecto"></div>
+        <div class="fg"><label>Ramo</label><input type="text" id="sync-branch" placeholder="main"></div>
+        <div class="fg"><label>Chave de acesso</label><input type="password" id="sync-key" placeholder="••••••••••••••••"></div>
         <button class="btn-sm save full" onclick="salvarSyncCfg()">Guardar configuração</button>
         <button class="btn-sm sage full" style="margin-top:6px" onclick="testarSyncCfg()"><i class="fa-solid fa-plug" style="margin-right:5px"></i>Testar ligação e inicializar</button>
       </div>
@@ -431,9 +587,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
       <p style="font-size:.76rem;color:var(--muted);line-height:1.7;margin-bottom:10px">
         Publica todas as alterações directamente no site. O ficheiro <code style="background:var(--bg2);padding:1px 6px;border-radius:4px;font-size:.72rem">catalogo.js</code> é actualizado automaticamente — sem base64, limpo e rápido.
       </p>
-      <div class="info-badge" id="export-img-info">A calcular imagens...</div>
-      <div id="pub-status" style="display:none;margin-top:8px;padding:9px 12px;border-radius:10px;font-size:.76rem;line-height:1.5"></div>
-      <button class="btn-sm save full" style="margin-top:8px" id="btn-publicar" onclick="publicarNoSite()">🚀 Publicar no site</button>
+      <div class="info-badge" id="export-img-info" style="background: rgba(6, 214, 160, 0.1); border-color: rgba(6, 214, 160, 0.3); color: var(--teal);">✅ 1 sincronizada · 17 sem imagem</div>
+      <div id="pub-status" style="display: block; margin-top: 8px; padding: 9px 12px; border-radius: 10px; font-size: 0.76rem; line-height: 1.5; background: rgba(255, 209, 102, 0.1); border: 1px solid rgba(255, 209, 102, 0.3); color: var(--yellow);">A preparar ficheiros...</div>
+      <button class="btn-sm save full" style="margin-top:8px" id="btn-publicar" onclick="publicarNoSite()" disabled=""><i class="fa-solid fa-spinner fa-spin" style="margin-right:5px"></i>A publicar...</button>
       <button class="btn-sm ghost full" style="margin-top:6px" onclick="exportarCatalogoJS()"><i class="fa-solid fa-download" style="margin-right:5px"></i>Só descarregar catalogo.js</button>
       <p style="font-size:.64rem;color:var(--muted2);text-align:center;margin-top:8px;line-height:1.5">⏱️ Após publicar, as alterações ficam visíveis no site em <strong style="color:var(--muted)">1 a 5 minutos</strong>. Se não aparecerem, aguarde e recarregue a página.</p>
     </div>
@@ -441,7 +597,13 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     <!-- GESTÃO DE IMAGENS -->
     <div class="card" style="margin-top:0">
       <div class="card-t" style="margin-bottom:6px"><i class="fa-solid fa-images" style="margin-right:6px"></i>Gestão de imagens</div>
-      <div id="imgs-lista" style="margin-bottom:10px"></div>
+      <div id="imgs-lista" style="margin-bottom:10px"><div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border)">
+      <img src="imagens/bolo-de-casamento-classico-p2tj.webp" style="width:36px;height:36px;border-radius:8px;object-fit:cover;flex-shrink:0" onerror="this.style.opacity='.3'">
+      <div style="flex:1;min-width:0">
+        <div style="font-family:var(--ft);font-size:.76rem;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Bolo de Casamento Clássico</div>
+        <div style="font-size:.6rem;color:var(--teal);margin-top:1px">imagens/bolo-de-casamento-classico-p2tj.webp</div>
+      </div>
+    </div></div>
       <button class="btn-sm warn full" id="btn-limpar-imgs" onclick="limparImagensOrfas()"><i class="fa-solid fa-broom" style="margin-right:5px"></i>Limpar imagens não utilizadas</button>
       <p style="font-size:.62rem;color:var(--muted2);margin-top:8px;text-align:center">Remove do servidor as imagens que já não estão associadas a nenhum produto</p>
     </div>
@@ -452,9 +614,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
       <p style="font-size:.72rem;color:var(--muted);margin-bottom:8px;line-height:1.6">Inclui todos os dados. Use para fazer cópia de segurança ou migrar para outro dispositivo.</p>
       <button class="btn-sm warn full" onclick="exportarJSON()"><i class="fa-solid fa-box-archive" style="margin-right:5px"></i>Exportar backup JSON</button>
       <div class="sep" style="margin-top:10px">Restaurar backup</div>
-      <label class="btn-upload full" style="justify-content:center;border-radius:12px;padding:10px;margin-bottom:6px"><i class="fa-solid fa-folder-open" style="margin-right:5px"></i>Importar ficheiro JSON<input type="file" accept="application/json,.json" onchange="importarFicheiro(this)"/></label>
+      <label class="btn-upload full" style="justify-content:center;border-radius:12px;padding:10px;margin-bottom:6px"><i class="fa-solid fa-folder-open" style="margin-right:5px"></i>Importar ficheiro JSON<input type="file" accept="application/json,.json" onchange="importarFicheiro(this)"></label>
       <p style="font-size:.62rem;color:var(--muted2);text-align:center;margin-bottom:6px">— ou cole o JSON abaixo —</p>
-      <div class="fg"><textarea id="import-ta" rows="3" placeholder='{"loja":{...},"produtos":[...]}'></textarea></div>
+      <div class="fg"><textarea id="import-ta" rows="3" placeholder="{&quot;loja&quot;:{...},&quot;produtos&quot;:[...]}"></textarea></div>
       <button class="btn-sm prim full" onclick="importar()"><i class="fa-solid fa-file-import" style="margin-right:5px"></i>Importar dados</button>
     </div>
 
@@ -469,7 +631,13 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
   <div class="panel" id="tab-dados">
     <div class="card">
       <div class="card-t" style="margin-bottom:12px"><i class="fa-solid fa-database" style="margin-right:6px"></i>Resumo de Dados</div>
-      <div class="stats-grid" id="dados-stats"></div>
+      <div class="stats-grid" id="dados-stats">
+    <div class="stat-c"><div class="stat-n">18</div><div class="stat-l">Produtos</div></div>
+    <div class="stat-c"><div class="stat-n">18</div><div class="stat-l">Disponíveis</div></div>
+    <div class="stat-c"><div class="stat-n">5</div><div class="stat-l">Categorias</div></div>
+    <div class="stat-c"><div class="stat-n">3</div><div class="stat-l">Depoimentos</div></div>
+    <div class="stat-c"><div class="stat-n">4</div><div class="stat-l">Features</div></div>
+    <div class="stat-c"><div class="stat-n">1</div><div class="stat-l">Com Imagem</div></div></div>
       <div class="sep" style="margin-top:10px">Zona de Perigo</div>
       <button class="btn-sm dang full" onclick="resetDados()"><i class="fa-solid fa-trash-can" style="margin-right:5px"></i>Repor dados de fábrica</button>
     </div>
@@ -480,9 +648,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     <div class="card">
       <div class="card-t" style="margin-bottom:12px"><i class="fa-solid fa-lock" style="margin-right:6px"></i>Alterar PIN de Acesso</div>
       <div class="info-badge" id="aviso-pin-padrao" style="display:none;margin-bottom:12px;background:rgba(255,71,87,.08);border-color:rgba(255,71,87,.3);color:var(--red)">⚠️ Está a usar o PIN padrão. Altere-o agora para proteger o painel.</div>
-      <div class="fg"><label>PIN actual</label><input type="password" id="pwd-act" inputmode="numeric"/></div>
-      <div class="fg"><label>Novo PIN</label><input type="password" id="pwd-new" inputmode="numeric"/></div>
-      <div class="fg"><label>Confirmar novo PIN</label><input type="password" id="pwd-cnf" inputmode="numeric"/></div>
+      <div class="fg"><label>PIN actual</label><input type="password" id="pwd-act" inputmode="numeric"></div>
+      <div class="fg"><label>Novo PIN</label><input type="password" id="pwd-new" inputmode="numeric"></div>
+      <div class="fg"><label>Confirmar novo PIN</label><input type="password" id="pwd-cnf" inputmode="numeric"></div>
       <button class="btn-sm save full" style="margin-top:4px" onclick="alterarPin()">Alterar PIN</button>
     </div>
   </div>
@@ -495,17 +663,17 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
   <div class="sh-inner">
     <div class="sh-title" id="sh-title">Produto</div>
     <div class="sep">Informação básica</div>
-    <div class="fg"><label>Nome</label><input type="text" id="pe-nome"/></div>
+    <div class="fg"><label>Nome</label><input type="text" id="pe-nome"></div>
     <div class="fg-row">
-      <div class="fg"><label>Preço (Kz, 0=Orçamento)</label><input type="number" id="pe-preco" inputmode="numeric"/></div>
-      <div class="fg"><label>Preço original (0=sem promo)</label><input type="number" id="pe-orig" inputmode="numeric"/></div>
+      <div class="fg"><label>Preço (Kz, 0=Orçamento)</label><input type="number" id="pe-preco" inputmode="numeric"></div>
+      <div class="fg"><label>Preço original (0=sem promo)</label><input type="number" id="pe-orig" inputmode="numeric"></div>
     </div>
     <div class="fg-row">
       <div class="fg"><label>Categoria</label><select id="pe-cat"></select></div>
       <div class="fg"><label>Etiqueta</label><select id="pe-etiqueta"><option value="">Nenhuma</option><option value="novo">Novo</option><option value="promo">Promoção</option><option value="destaque">Destaque ⭐</option><option value="especial">Especial</option></select></div>
     </div>
     <div class="fg-row">
-      <div class="fg"><label>Emoji</label><input type="text" id="pe-emoji" maxlength="8" placeholder="🎂"/></div>
+      <div class="fg"><label>Emoji</label><input type="text" id="pe-emoji" maxlength="8" placeholder="🎂"></div>
       <div style="display:flex;align-items:flex-end;padding-bottom:10px"><div class="sw-row" style="border:none;padding:0"><span class="sw-l" style="font-size:.76rem;margin-right:8px">Disponível</span><button class="sw on" id="pe-disp" onclick="toggleSw(this)"></button></div></div>
     </div>
     <div style="margin-bottom:10px">
@@ -513,8 +681,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
       <div class="img-pick-area">
         <div class="img-thumb" id="pe-img-thumb" onclick="document.getElementById('pe-img-file').click()"><i class="fa-solid fa-camera" style="font-size:1.4rem"></i></div>
         <div class="img-pick-btns">
-          <label class="btn-upload"><i class="fa-solid fa-folder-open" style="margin-right:5px"></i>Do dispositivo<input type="file" id="pe-img-file" accept="image/*" onchange="carregarImg(this,'pe-img','pe-img-thumb')"/></label>
-          <input type="text" id="pe-img" placeholder="ou URL..." oninput="prevUrl(this.value,'pe-img-thumb')"/>
+          <label class="btn-upload"><i class="fa-solid fa-folder-open" style="margin-right:5px"></i>Do dispositivo<input type="file" id="pe-img-file" accept="image/*" onchange="carregarImg(this,'pe-img','pe-img-thumb')"></label>
+          <input type="text" id="pe-img" placeholder="ou URL..." oninput="prevUrl(this.value,'pe-img-thumb')">
           <button class="btn-clr-img" onclick="limparImg('pe-img','pe-img-thumb')">✕ Remover</button>
         </div>
       </div>
@@ -522,21 +690,21 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     <div style="margin-bottom:12px">
       <label style="font-size:.64rem;font-weight:700;color:var(--muted);letter-spacing:.4px;text-transform:uppercase;display:block;margin-bottom:5px">Galeria (até 4 fotos adicionais)</label>
       <div id="galeria-lista" style="display:flex;flex-direction:column;gap:8px;margin-bottom:8px"></div>
-      <label class="btn-upload" id="btn-add-galeria">📁 Adicionar foto à galeria<input type="file" accept="image/*" onchange="adicionarFotoGaleria(this)"/></label>
+      <label class="btn-upload" id="btn-add-galeria">📁 Adicionar foto à galeria<input type="file" accept="image/*" onchange="adicionarFotoGaleria(this)"></label>
       <p style="font-size:.6rem;color:var(--muted2);margin-top:6px">As fotos aparecem num carrossel deslizável na página do produto</p>
     </div>
     <div class="fg"><label>Descrição</label><textarea id="pe-desc" rows="3"></textarea></div>
     <div class="sep">Destaques do produto</div>
     <div class="tags-list" id="dest-list"></div>
     <div style="display:flex;gap:6px">
-      <div class="fg" style="flex:1;margin:0"><input type="text" id="dest-in" placeholder="Ex: Personalização total" onkeydown="if(event.key==='Enter'){addDest();event.preventDefault()}"/></div>
+      <div class="fg" style="flex:1;margin:0"><input type="text" id="dest-in" placeholder="Ex: Personalização total" onkeydown="if(event.key==='Enter'){addDest();event.preventDefault()}"></div>
       <button class="btn-sm ghost" onclick="addDest()" style="height:38px">+</button>
     </div>
     <div class="sep" style="margin-top:10px">Especificações / Detalhes</div>
     <div id="specs-list"></div>
     <div class="fg-row">
-      <div class="fg"><label>Chave</label><input type="text" id="spec-k" placeholder="Porções"/></div>
-      <div class="fg"><label>Valor</label><input type="text" id="spec-v" placeholder="50 a 100 pessoas"/></div>
+      <div class="fg"><label>Chave</label><input type="text" id="spec-k" placeholder="Porções"></div>
+      <div class="fg"><label>Valor</label><input type="text" id="spec-v" placeholder="50 a 100 pessoas"></div>
     </div>
     <button class="btn-sm ghost" onclick="addSpec()">+ Adicionar detalhe</button>
     <div class="btns-row" style="margin-top:16px">
@@ -553,10 +721,10 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
   <div class="sh-bar"></div><button class="close-sh" onclick="fecharSh('ov2','sh2')">✕</button>
   <div class="sh-inner">
     <div class="sh-title" id="sh2-title">Categoria</div>
-    <div class="fg"><label>ID (sem espaços)</label><input type="text" id="ce-id" placeholder="bolos"/></div>
-    <div class="fg"><label>Nome</label><input type="text" id="ce-label" placeholder="Bolos"/></div>
-    <div class="fg"><label>Emoji</label><input type="text" id="ce-emoji" maxlength="8" placeholder="🎂"/></div>
-    <div class="fg"><label>Cor (hex)</label><input type="color" id="ce-cor" value="#ff6b9d" style="padding:3px;height:36px;cursor:pointer;background:var(--bg2);border-radius:8px;border:1.5px solid var(--border)"/></div>
+    <div class="fg"><label>ID (sem espaços)</label><input type="text" id="ce-id" placeholder="bolos"></div>
+    <div class="fg"><label>Nome</label><input type="text" id="ce-label" placeholder="Bolos"></div>
+    <div class="fg"><label>Emoji</label><input type="text" id="ce-emoji" maxlength="8" placeholder="🎂"></div>
+    <div class="fg"><label>Cor (hex)</label><input type="color" id="ce-cor" value="#ff6b9d" style="padding:3px;height:36px;cursor:pointer;background:var(--bg2);border-radius:8px;border:1.5px solid var(--border)"></div>
     <div class="btns-row" style="margin-top:14px">
       <button class="btn-sm save" onclick="salvarCat()" style="flex:1">💾 Guardar</button>
       <button class="btn-sm dang" id="btn-dl-c" onclick="deletarCat()" style="display:none">🗑️</button>
@@ -582,10 +750,10 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
     </div>
     <div class="fg"><label>Texto do depoimento</label><textarea id="dep-txt" rows="3" placeholder="O bolo ficou perfeito..."></textarea></div>
     <div class="fg-row">
-      <div class="fg"><label>Nome</label><input type="text" id="dep-nome" placeholder="Ana Cristina"/></div>
-      <div class="fg"><label>Evento</label><input type="text" id="dep-ev" placeholder="Casamento — Junho 2024"/></div>
+      <div class="fg"><label>Nome</label><input type="text" id="dep-nome" placeholder="Ana Cristina"></div>
+      <div class="fg"><label>Evento</label><input type="text" id="dep-ev" placeholder="Casamento — Junho 2024"></div>
     </div>
-    <div class="fg"><label>Avatar (emoji)</label><input type="text" id="dep-av" maxlength="4" placeholder="👰"/></div>
+    <div class="fg"><label>Avatar (emoji)</label><input type="text" id="dep-av" maxlength="4" placeholder="👰"></div>
     <div class="btns-row" style="margin-top:14px">
       <button class="btn-sm save" onclick="salvarDep()" style="flex:1">💾 Guardar</button>
       <button class="btn-sm dang" id="btn-dl-dep" onclick="deletarDep()" style="display:none">🗑️</button>
@@ -600,8 +768,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
   <div class="sh-bar"></div><button class="close-sh" onclick="fecharSh('ov4','sh4')">✕</button>
   <div class="sh-inner">
     <div class="sh-title" id="sh4-title">Porquê Nós</div>
-    <div class="fg"><label>Emoji</label><input type="text" id="feat-emoji" maxlength="4" placeholder="🎂"/></div>
-    <div class="fg"><label>Título</label><input type="text" id="feat-titulo" placeholder="Artesanal"/></div>
+    <div class="fg"><label>Emoji</label><input type="text" id="feat-emoji" maxlength="4" placeholder="🎂"></div>
+    <div class="fg"><label>Título</label><input type="text" id="feat-titulo" placeholder="Artesanal"></div>
     <div class="fg"><label>Descrição</label><textarea id="feat-desc" rows="2" placeholder="Cada produto feito à mão..."></textarea></div>
     <div class="btns-row" style="margin-top:14px">
       <button class="btn-sm save" onclick="salvarFeat()" style="flex:1">💾 Guardar</button>
@@ -612,7 +780,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--white);min-height:10
 </div>
 
 <div class="toast" id="toast"></div>
-<script>const _ADMIN_PIN_HASH='7c5403c9';</script>
+<script>const _ADMIN_PIN_HASH='7c537b05';</script>
 <script>
 // catalogo.js — embutido automaticamente pelo admin
 // ═══════════════════════════════════════════════════════
@@ -1303,8 +1471,8 @@ function fecharSh(ovId,shId){document.getElementById(ovId).classList.remove('on'
 // ── CONFIG EMBEBIDA (preenchida pela IMPERSILVA TECH antes de entregar) ────
 // Deixar string vazia ('') se não configurado
 const _SYNC_CFG_EMBED = {
-  usr:    '',
-  proj:   '',
+  usr:    'impersilvatech',
+  proj:   'Confeti.ao',
   branch: 'main',
   key:    ''
 };
@@ -2097,5 +2265,6 @@ function toast(msg,tipo){
   _toastTimer=setTimeout(()=>{if(t)t.classList.remove('show');},3200);
 }
 </script>
-</body>
-</html>
+
+
+</body></html>
