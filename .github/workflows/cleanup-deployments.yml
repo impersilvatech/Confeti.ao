@@ -45,9 +45,9 @@ jobs:
             // 3. Ordenar do mais recente para o mais antigo
             comEstado.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
-            // 4. Manter os 3 mais recentes — apagar todo o resto independentemente do estado
+            // 4. Manter os 3 mais recentes — apagar todos os restantes (independentemente do estado)
             const MANTER = 3;
-            const paraApagar = comEstado.slice(MANTER);
+            const paraApagar = comEstado.slice(MANTER); // sem filtro de estado
 
             console.log(`Manter: ${Math.min(MANTER, comEstado.length)} | Apagar: ${paraApagar.length}`);
 
