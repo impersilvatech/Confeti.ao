@@ -1,13 +1,13 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 28/03/2026, 14:35:41
+// CONFETI — catalogo.js v2.0 — Gerado em: 28/03/2026, 14:47:32
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
-  "nome": "Emílio 🎂🍬",
+  "nome": "ANGOLA",
   "tagline": "Doces para cada momento especial",
   "slogan": "Criamos sabores que ficam na memória. Do casamento à festa de natal, cada detalhe conta.",
   "whatsapp": "244954288128",
   "logo": "",
-  "morada": "Luanda, Angola",
+  "morada": "Huambo, Angola",
   "instagram": "",
   "badge": "🎊 Confeitaria Artesanal · Luanda",
   "heroTitulo": "Doces que fazem\na festa!",
@@ -42,7 +42,7 @@ const LOJA_DEFAULT = {
   "secCtaActiva": true,
   "campoDataActivo": true,
   "campoLocalActivo": true,
-  "cf_versao": 5
+  "cf_versao": 3
 };
 const DEPOIMENTOS_DEFAULT = [
   {
