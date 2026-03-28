@@ -1,7 +1,18 @@
-// Service Worker — CONFETI v3
-const CACHE_NAME='confeti-v3';
+// Service Worker — CONFETI v4
+const CACHE_NAME='confeti-v4';
 self.addEventListener('install',e=>{self.skipWaiting();});
-self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
+self.addEventListener('activate',e=>{
+  e.waitUntil(
+    caches.keys()
+      .then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k))))
+      .then(()=>self.clients.claim())
+      .then(()=>{
+        // Notificar todos os clientes activos para recarregarem com ficheiros frescos
+        return self.clients.matchAll({type:'window',includeUncontrolled:true})
+          .then(clients=>clients.forEach(c=>c.postMessage({type:'SW_UPDATED',versao:4})));
+      })
+  );
+});
 self.addEventListener('fetch',e=>{
   const url=new URL(e.request.url);
   if(url.origin!==location.origin)return;
