@@ -1,8 +1,8 @@
-// CONFETI — catalogo.js v2.0 — Gerado em: 27/03/2026, 23:07:07
+// CONFETI — catalogo.js v2.0 — Gerado em: 28/03/2026, 07:57:04
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
-  "nome": "LOL",
+  "nome": "CONFETI",
   "tagline": "Doces para cada momento especial",
   "slogan": "Criamos sabores que ficam na memória. Do casamento à festa de natal, cada detalhe conta.",
   "whatsapp": "244954288128",
