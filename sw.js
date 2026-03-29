@@ -1,5 +1,5 @@
-// Service Worker — CONFETI v4
-const CACHE_NAME='confeti-v4';
+// Service Worker — CONFETI v3
+const CACHE_NAME='confeti-v3';
 self.addEventListener('install',e=>{self.skipWaiting();});
 self.addEventListener('activate',e=>{
   e.waitUntil(
@@ -9,7 +9,7 @@ self.addEventListener('activate',e=>{
       .then(()=>{
         // Notificar todos os clientes activos para recarregarem com ficheiros frescos
         return self.clients.matchAll({type:'window',includeUncontrolled:true})
-          .then(clients=>clients.forEach(c=>c.postMessage({type:'SW_UPDATED',versao:4})));
+          .then(clients=>clients.forEach(c=>c.postMessage({type:'SW_UPDATED',versao:3})));
       })
   );
 });
