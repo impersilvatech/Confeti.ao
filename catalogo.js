@@ -2,7 +2,7 @@
 // IMPERSILVA TECH
 
 const LOJA_DEFAULT = {
-  "nome": "BBB",
+  "nome": "Emílio Doces 🍰🎂🍬",
   "tagline": "Doces para cada momento especial",
   "slogan": "Criamos sabores que ficam na memória. Do casamento à festa de natal, cada detalhe conta.",
   "whatsapp": "244954288128",
