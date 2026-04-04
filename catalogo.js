@@ -189,15 +189,15 @@ const CATEGORIAS_DEFAULT = [
 const PRODUTOS_DEFAULT = [
   {
     "id": 101,
-    "categoria": "bolos",
     "nome": "Bolo de Casamento Clássico",
     "preco": 45000,
     "preco_orig": 0,
+    "categoria": "bolos",
     "etiqueta": "destaque",
     "emoji": "💍",
-    "imagem": "",
-    "disponivel": true,
+    "imagem": "imagens/bolo-de-casamento-classico-rm6p.webp",
     "descricao": "Bolo de casamento em andares com cobertura de fondant personalizada. Decoração floral à escolha.",
+    "disponivel": true,
     "specs": {
       "Andares": "2 a 5 (a combinar)",
       "Sabores": "Baunilha / Chocolate / Red Velvet / Limão",
@@ -209,7 +209,8 @@ const PRODUTOS_DEFAULT = [
       "Personalização total",
       "Entrega no local",
       "Suporte na montagem"
-    ]
+    ],
+    "galeria": []
   },
   {
     "id": 102,
